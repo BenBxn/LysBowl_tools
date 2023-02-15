@@ -15,7 +15,7 @@
     <header>
         <div class="block__header">
             <div class="header__tite_logo">
-                <a href="#"><img src="/img/logo/logo.png" alt="Logo" id="logo__header"></a>
+                <a href="#"><img src="img/logo/logo.png" alt="Logo" id="logo__header"></a>
                 <h1>LYSBOWL</h1>
             </div>
             <div>
