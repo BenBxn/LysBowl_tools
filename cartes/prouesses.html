@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Prouesses</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>   
+
+    <header>
+    <nav class="nav_tirage">
+        <a href="../cartes.html" class="lien_tirage">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/qoozyitg.json"
+                trigger="hover"
+                style="width:100px;height:100px"> <p>Retour cartes</p>
+            </lord-icon>
+        </a>
+    </nav>
+    </header>
+    
+    <section class="section_tirage">
+    
+        <div class="cell">
+            <div class="card">
+                <span class="throbber-loader">Loading&#8230;</span>
+            </div>
+            <div class="loader">
+            </div>
+        </div> 
+    
+
+
+        <div id="images_cartes"></div>
+        <script>
+        const images = [
+        '<img src="../images/prouesses_heroiques/001.png" alt="image 001">',
+        '<img src="../images/prouesses_heroiques/002.png" alt="image 002">',
+        '<img src="../images/prouesses_heroiques/003.png" alt="image 003">',
+        '<img src="../images/prouesses_heroiques/004.png" alt="image 004">',
+        '<img src="../images/prouesses_heroiques/005.png" alt="image 005">',
+        '<img src="../images/prouesses_heroiques/006.png" alt="image 006">',
+        '<img src="../images/prouesses_heroiques/007.png" alt="image 007">',
+        '<img src="../images/prouesses_heroiques/008.png" alt="image 008">',
+        '<img src="../images/prouesses_heroiques/009.png" alt="image 009">',
+        '<img src="../images/prouesses_heroiques/010.png" alt="image 010">',
+        '<img src="../images/prouesses_heroiques/011.png" alt="image 011">',
+        '<img src="../images/prouesses_heroiques/012.png" alt="image 012">',
+        '<img src="../images/prouesses_heroiques/013.png" alt="image 013">',
+        '<img src="../images/prouesses_heroiques/014.png" alt="image 014">',
+        '<img src="../images/prouesses_heroiques/015.png" alt="image 015">',
+        '<img src="../images/prouesses_heroiques/016.png" alt="image 016">'
+        ];
+        const conteneur = document.getElementById('images_cartes');
+        function afficherImage() {
+        var a = Math.floor(Math.random() * images.length);
+        var image = images[a]; 
+        conteneur.innerHTML = image;
+        }
+        setTimeout (afficherImage, 2000)
+        /* setInterval(afficherImage, 5000); */
+        </script>
+    </section>
+</body>
+</html>

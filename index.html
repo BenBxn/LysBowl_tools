@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <title>LysDoc</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="block__header">
+            <div class="header__tite_logo">
+                <a href="#"><img src="/img/logo/logo.png" alt="Logo" id="logo__header"></a>
+                <h1>LYSBOWL</h1>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cartes.html">Cartes</a></li>
+                        <li><a href="dés.html">Dès</a></li>
+                        <li><a href="passe.php">Passes</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+
+            <section id="section1">
+                <img src="/img/logo/logo.png" alt="Logo Football Universitaire Américain">
+                <p>Bienvenue sur la page dédiée à LYSBOWL !<br><br>
+                    Découvrez les dernières nouvelles, les règles, les outils et les statistiques sur les meilleures coachs universitaires de la league de football fantasy LysBowl.</p>
+                    <p> League règles LRB6 + modifications </p>
+                    <p> Fantasyfootbowl, SevenBowl, StreetBowl, DeathBowl, DungeonBowl ...</p>
+            </section>
+
+            <section id="section2">
+                <div>
+                    <h2>Cartes à distribuer</h2>
+                    <p>Consultez la liste des cartes disponibles pour la collection.</p>
+                    <a href="cartes.html">
+                        <button class="boutton__outils"> Piocher cartes </button>
+                    </a>
+                </div>
+                <img src="/img/cartes_gobelin.png">
+            </section>
+
+            <section id="section5">
+                <h2>Dès</h2>
+                <p>Lancez les dés, et retrouvez les gabarit de dispersion pour le ballon.</p>
+                <a href="dés.html">
+                    <button class="boutton__outils"> Lancer Dés </button>
+                </a>
+            </section>
+            
+            <section id="section4">
+                <h2>Règle des passes</h2>
+                <p> En construction </p>
+                <p>Une passe réussie doit être effectuée à partir d'une main et peut être attrapée par un joueur adverse avant de toucher le sol. Si la passe est incomplète ou interceptée, l'équipe prend un Turnover.</p>
+                <a href="passe.html">
+                    <button class="boutton__outils"> Vérifier Passe & Interception </button>
+                </a>
+            </section>
+
+    </main>
+
+    <main>
+
+        <section id="section3">
+            <h2>Infos match</h2>
+            <p>Selectionnez la saison météo :</p>
+            <select id="result3Select">
+                <option value="option1">Météo standard</option>
+                <option value="option2">Météo de Printemps</option>
+                <option value="option3">Météo d’Eté</option>
+                <option value="option4">Météo d’Automne</option>
+                <option value="option5">Météo d’Hiver</option>
+            </select>
+            <div>
+                <button id="drawButton"> Lancer le match ! </button>
+            </div>
+            <div class="container__infomatch">
+                <div class="box">
+                    <h3>Arbitre</h3>
+                    <p>Nom de l'arbitre:</p>
+                    <div class="container__resultatmatch"><p id="resultatArbitre"><img src="img/lysbowl_referee.png"></p></div>
+
+                    <!--<p>Les triplés Trundlefoot comprennent Bungo, Filibert et Jeph. Ils n'arbitrent un match que lorsqu'ils sont tous ensemble et personne ne sait pourquoi puisqu'ils passent la majeure partie du match à se disputer entre eux.</p>
+                    <p>L'arbitre Hokuli est un Norseman connu comme l'un des arbitres les plus charismatiques sur le terrain aujourd'hui. Ses cheveux flottants, son physique sculpté et sa voix en plein essor ont fait de lui un favori des fans. Lorsqu'il ne s'affranchit pas, Hokuli pille des villages et mène des raids sur les villes côtières. Lorsqu'il est mis au défi sur le terrain, Hokuli est connu pour faire face à la situation à l'aide de sa hache de combat de confiance.</p>
+                    <p>L'un des premiers apprentis de Roze-El et l'un des officiels les plus anciens de Blood Bowl, Thoron Korensson s'est tenu au courant de chaque changement de règle et n'aurait jamais fait de mauvais appel. Il est l'un des très, très, très rares arbitres où les entraîneurs réfléchissent à deux fois avant de contester un appel</p>
+                    <p>Jorm l'Ogre a rejoint le RARG principalement en raison de la pression politique exercée par la Société Contre les Stéréotypes des Ogres, ou SASO. Le but était de montrer que les Ogres n'étaient pas seulement des brutes stupides, mais qu'ils pouvaient comprendre les règles du Blood Bowl et même devenir arbitre du jeu. Jorm, cependant, n'a pas prouvé que leur théorie était vraie. Que ce soit en inventant des règles, en se battant ou même en participant aux jeux, Jorm n'a pas été à la hauteur du battage médiatique mis en place par la SASO.</p>
+                    -->
+                </div>
+                <div class="box">
+                    <h3>Stade</h3>
+                    <p>Type du stade:</p>
+                    <div class="container__resultatmatch"><p id="resultatStade"><img src="img/lysbowl_stadium.png"></p></div>
+                </div>
+                <div class="box">
+                    <h3>Météo</h3>
+                    <p>Conditions météorologiques:</p>
+                    <div class="container__resultatmatch"><p id="resultMeteo"><img src="img/lysbowl_meteo.png"></p></div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <main>
+
+
+        <section id="section8">
+            <h2>Gestion League</h2>
+            <p>En construction</p>
+            <p>Ooutils de Gestion Tournois/Sasions/League/Cup</p>
+        </section>
+
+        <section id="section7">
+            <h2>Probabilité</h2>
+            <p> En construction </p>
+            <p>Consultez les dernières prévisions de probabilité pour les matchs de football universitaires.</p>
+        </section>
+
+
+        <section id="section6">
+            <h2>Documents à télécharger</h2>
+            <p>Téléchargez les règles officielles, les statistiques et les calendriers des matchs de football universitaires.</p>
+            <div>
+                <button> Voir les documents </button>
+            </div>
+        </section>
+
+        <section id="section9">
+                <h2>Liens</h2>
+                <p>Consultez les liens ci-dessous pour en savoir plus sur le football fantasy</p>
+                    <ul>
+                    <li><a href="http://teamfrancebb.1fr1.net/">TeamFranceBB</a></li>
+                    <li><a href="#">Empire oublié</a></li>
+                    <li><a href="https://www.thenaf.net/">The NAF</a></li>
+                    <li><a href="#">Lutèce</a></li>
+                    </ul>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+<footer>
+        <p>Copyright ©2023 Bxn_Ben LYSBOWL-02LBB</p>
+</footer>
+            
+</body>
+</html>

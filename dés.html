@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <title>LysDoc</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="block__header">
+            <div class="header__tite_logo">
+                <a href="#"><img src="/img/logo/logo.png" alt="Logo" id="logo__header"></a>
+                <h1>LYSBOWL</h1>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cartes.html">Cartes</a></li>
+                        <li><a href="dés.html">Dès</a></li>
+                        <li><a href="passe.php">Passes</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main__dés">
+        <h2 class="titre__dés">Fanatasy Bowl Dices</h2>
+        <div class="block__main__dés">
+            <section class="section__dés section__dés__blocage">
+                <h2>Dés de Blocage</h2>
+                <!--BLOCK DICES-->
+                <div class="blocks__sections__dés">
+                    <div class="block__dice">
+                        <label for="blockdice__count">Combien de dés de "blocage" souhaitez-vous lancer ?</label><br><br>
+                        <select class="select__dices" id="blockdice__count">
+                            <option value="1">1 dé</option>
+                            <option value="2">2 dés</option>
+                            <option value="3">3 dés</option>
+                        </select>
+                    </div>
+                    <div class="block__dice">    
+                        <button id="roll_blokdice">Lancer les dés</button>
+                        <br>
+                        <div id="blokdice_result">Résultat:</div>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="slider">
+                    <div class="slide__nuffle slide1__nuffle"></div>
+                    <div class="slide__nuffle slide2__nuffle"></div>
+                </div>
+            </section>
+                <!---->
+            <section class="section__dés">
+                <h2>Dés de 6, 3, 4, 8 & 16</h2>
+                <div class="blocks__sections">
+                    <div id="dice-selector">
+                        <h4>Choisissez le nombre de dés</h4>
+                        <select class="select__dices" id="dice__number">
+                            <option value="1">1 dé</option>
+                            <option value="2">2 dés</option>
+                            <option value="3">3 dés</option>
+                        </select>
+                
+                        <h4>Choisissez le nombre de faces</h4>
+                        <select class="select__dices" id="dice__faces">
+                                <option value="6">6 faces</option>
+                                <option value="3">3 faces</option>
+                                <option value="4">4 faces</option>
+                                <option value="8">8 faces</option>
+                                <option value="16">16 faces</option>
+                        </select>
+                    </div>    
+                
+                    <div class="block__dice">
+                            <button id="roll-dice">Lancer les dés</button>
+                                <br><br>
+                            <div id="dice__container">
+                                    Résultat:
+                            </div>
+                            <div class="parchemin">
+                                <div id="total"></div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="block__gabarit">
+            <h2>Gabarits</h2>
+            <section class="section__gabarit">
+                <img src="img/ligne-de-touche.jpg">
+                <img src="img/corner-template.jpg">
+                <img src="img/Gabarit_de_Dispersion.jpg">
+            </section>
+        </div>
+    
+        <!--OTHERS DICES-->
+        <!--
+            <section class="section__dés"></section>
+        -->
+
+        <script src="js/scriptdice.js"></script>
+    </main>
+
+
+
+
+    <footer>
+        <p>Copyright ©2023 Bxn_Ben LYSBOWL-02LBB</p>
+    </footer>
+    
+</body>
+</html>

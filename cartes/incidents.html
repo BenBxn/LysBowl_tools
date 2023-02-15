@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Incidents</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>   
+    <header>
+    <nav class="nav_tirage">
+        <a href="../cartes.html" class="lien_tirage">
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/qoozyitg.json"
+                trigger="hover"
+                style="width:100px;height:100px"> <p>Retour cartes</p>
+            </lord-icon>
+        </a>
+    </nav>
+    </header>
+    
+    <section class="section_tirage">
+    
+        <div class="cell">
+            <div class="card">
+                <span class="throbber-loader">Loading&#8230;</span>
+            </div>
+            <div class="loader">
+            </div>
+        </div> 
+    
+
+        <div id="images_cartes"></div>
+        <script>
+        const images = [
+        '<img src="../images/incidents_mineurs/001.png" alt="image 001">',
+        '<img src="../images/incidents_mineurs/002.png" alt="image 002">',
+        '<img src="../images/incidents_mineurs/003.png" alt="image 003">',
+        '<img src="../images/incidents_mineurs/004.png" alt="image 004">',
+        '<img src="../images/incidents_mineurs/005.png" alt="image 005">',
+        '<img src="../images/incidents_mineurs/006.png" alt="image 006">',
+        '<img src="../images/incidents_mineurs/007.png" alt="image 007">',
+        '<img src="../images/incidents_mineurs/008.png" alt="image 008">',
+        '<img src="../images/incidents_mineurs/009.png" alt="image 009">',
+        '<img src="../images/incidents_mineurs/010.png" alt="image 010">',
+        '<img src="../images/incidents_mineurs/011.png" alt="image 011">',
+        '<img src="../images/incidents_mineurs/012.png" alt="image 012">',
+        '<img src="../images/incidents_mineurs/013.png" alt="image 013">',
+        '<img src="../images/incidents_mineurs/014.png" alt="image 014">',
+        '<img src="../images/incidents_mineurs/015.png" alt="image 015">',
+        '<img src="../images/incidents_mineurs/016.png" alt="image 016">',
+        '<img src="../images/incidents_mineurs/017.png" alt="image 017">',
+        '<img src="../images/incidents_mineurs/018.png" alt="image 018">',
+        '<img src="../images/incidents_mineurs/019.png" alt="image 019">',
+        '<img src="../images/incidents_mineurs/020.png" alt="image 020">',
+        '<img src="../images/incidents_mineurs/021.png" alt="image 021">',
+        '<img src="../images/incidents_mineurs/022.png" alt="image 022">',
+        '<img src="../images/incidents_mineurs/023.png" alt="image 023">',
+        '<img src="../images/incidents_mineurs/024.png" alt="image 024">',
+        '<img src="../images/incidents_mineurs/025.png" alt="image 025">',
+        '<img src="../images/incidents_mineurs/026.png" alt="image 026">',
+        '<img src="../images/incidents_mineurs/027.png" alt="image 027">',
+        '<img src="../images/incidents_mineurs/028.png" alt="image 028">',
+        '<img src="../images/incidents_mineurs/029.png" alt="image 029">',
+        '<img src="../images/incidents_mineurs/030.png" alt="image 030">',
+        '<img src="../images/incidents_mineurs/031.png" alt="image 031">',
+        '<img src="../images/incidents_mineurs/032.png" alt="image 032">',
+        '<img src="../images/incidents_mineurs/033.png" alt="image 033">',
+        ];
+        const conteneur = document.getElementById('images_cartes');
+        function afficherImage() {
+        var a = Math.floor(Math.random() * images.length);
+        var image = images[a]; 
+        conteneur.innerHTML = image;
+        }
+        setTimeout (afficherImage, 2000)
+        /* setInterval(afficherImage, 5000); */
+        </script>
+    </section>
+</body>
+</html>
