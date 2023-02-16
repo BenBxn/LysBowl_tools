@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <title>LysDoc</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body id="body__passe">
+    <header>
+        <div class="block__header">
+            <div class="header__tite_logo">
+                <a href="#"><img src="img/logo/logo.png" alt="Logo" id="logo__header"></a>
+                <h1>LYSBOWL</h1>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cartes.html">Cartes</a></li>
+                        <li><a href="dés.html">Dès</a></li>
+                        <li><a href="passe.html">Passes</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main__passe">
+        <div class="block__passe">
+            <h2 class="titre__cartes"> Passes & Interceptions</h2>
+            <p>En construction</p>
+            <div class="block__tableauPasse">
+                <table id="tableauPasse"></table>
+                <tbody id="tbody"></tbody>
+            </div>
+        </div>
+    </main>
+    <main>
+        <section class="div_footerPasse">
+            <div>
+            </div>
+            <div>
+                <form name="pass" class="form__passe">
+                    
+                    <p>Thrower:<input type="text" name="thrower" size=5>
+                    Catcher:<input type="text" name="catcher" size=5></p>
+                    <input type="button" value="Calculez la distance de la passe et les interception possible" onClick="doPass()"><br>
+                    <textarea name="result" rows=5 cols=45 wrap="virtual"></textarea>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+    <div class="div__postFooter"></div>
+    <div class="div__postFooter"></div>
+    <div class="div__postFooter"></div>
+
+    <footer class="footer__passe">
+        <p>LYSBOWL-02LBB</p>
+    </footer>
+</body>
+
+<script src="js/scriptpasse.js"></script>
+</html>

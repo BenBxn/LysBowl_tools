@@ -8,7 +8,109 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="scriptpasse.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>/**------------------PASEES & INTERCEPTION ------------Style PHP*/
+.block__passe{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+table {
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    position: relative;
+}
+
+td.empty {
+    background-color: white;
+}
+
+/*Ballon*/
+td.clicked::after {
+    content: "";
+    border-radius: 50%;
+    background-color: rgb(0, 30, 255); /*voir pour mettre image*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+}
+/*passe impossible*/
+table td:last-child, table tr:first-child,
+table tr:last-child td:first-child{
+    background-color: rgba(0, 0, 0, 0.435);
+}
+/*Case Joueur*/
+tr:nth-child(15) td:nth-child(2){
+
+    background-image: url(img/logo/passe_logo.png);
+    background-size: cover;
+    background-position: center;
+}
+
+table tr:nth-child(2) td:nth-child(2), table tr:nth-child(2) td:nth-child(3), table tr:nth-child(2) td:nth-child(4), 
+table tr:nth-child(3) td:nth-child(2), table tr:nth-child(3) td:nth-child(3), table tr:nth-child(3) td:nth-child(4), table tr:nth-child(3) td:nth-child(5), table tr:nth-child(3) td:nth-child(6),
+table tr:nth-child(4) td:nth-child(2), table tr:nth-child(4) td:nth-child(3), table tr:nth-child(4) td:nth-child(4), table tr:nth-child(4) td:nth-child(5), table tr:nth-child(4) td:nth-child(6),table tr:nth-child(4) td:nth-child(7), table tr:nth-child(4) td:nth-child(8), 
+table tr:nth-child(5) td:nth-child(5), table tr:nth-child(5) td:nth-child(6), table tr:nth-child(5) td:nth-child(7), table tr:nth-child(5) td:nth-child(8), table tr:nth-child(5) td:nth-child(9),table tr:nth-child(5) td:nth-child(10), 
+table tr:nth-child(6) td:nth-child(7), table tr:nth-child(6) td:nth-child(8), table tr:nth-child(6) td:nth-child(9), table tr:nth-child(6) td:nth-child(10),table tr:nth-child(6) td:nth-child(11),
+table tr:nth-child(7) td:nth-child(9), table tr:nth-child(7) td:nth-child(10), table tr:nth-child(7) td:nth-child(11), table tr:nth-child(7) td:nth-child(12),
+table tr:nth-child(8) td:nth-child(10), table tr:nth-child(8) td:nth-child(11), table tr:nth-child(8) td:nth-child(12),
+table tr:nth-child(9) td:nth-child(11), table tr:nth-child(9) td:nth-child(12), table tr:nth-child(9) td:nth-child(13),
+table tr:nth-child(10) td:nth-child(11), table tr:nth-child(10) td:nth-child(12), table tr:nth-child(10) td:nth-child(13),
+table tr:nth-child(11) td:nth-child(12), table tr:nth-child(11) td:nth-child(13), table tr:nth-child(11) td:nth-child(14),
+table tr:nth-child(12) td:nth-child(12), table tr:nth-child(12) td:nth-child(13), table tr:nth-child(12) td:nth-child(14),
+table tr:nth-child(13) td:nth-child(13), table tr:nth-child(13) td:nth-child(14), table tr:nth-child(13) td:nth-child(15),
+table tr:nth-child(14) td:nth-child(13), table tr:nth-child(14) td:nth-child(14), table tr:nth-child(14) td:nth-child(15),
+table tr:nth-child(15) td:nth-child(13), table tr:nth-child(15) td:nth-child(14), table tr:nth-child(15) td:nth-child(15)
+{
+    background-color: red;
+}
+
+table tr:nth-child(5) td:nth-child(2),table tr:nth-child(5) td:nth-child(3),table tr:nth-child(5) td:nth-child(4),
+table tr:nth-child(6) td:nth-child(2),table tr:nth-child(6) td:nth-child(3),table tr:nth-child(6) td:nth-child(4),table tr:nth-child(6) td:nth-child(5),table tr:nth-child(6) td:nth-child(6),
+table tr:nth-child(7) td:nth-child(2),table tr:nth-child(7) td:nth-child(3),table tr:nth-child(7) td:nth-child(4),table tr:nth-child(7) td:nth-child(5),table tr:nth-child(7) td:nth-child(6),table tr:nth-child(7) td:nth-child(7),table tr:nth-child(7) td:nth-child(8),
+table tr:nth-child(8) td:nth-child(2),table tr:nth-child(8) td:nth-child(3),table tr:nth-child(8) td:nth-child(4),table tr:nth-child(8) td:nth-child(5),table tr:nth-child(8) td:nth-child(6),table tr:nth-child(8) td:nth-child(7),table tr:nth-child(8) td:nth-child(8),table tr:nth-child(8) td:nth-child(9),
+table tr:nth-child(9) td:nth-child(6),table tr:nth-child(9) td:nth-child(7),table tr:nth-child(9) td:nth-child(8),table tr:nth-child(9) td:nth-child(9),table tr:nth-child(9) td:nth-child(10),
+table tr:nth-child(10) td:nth-child(7),table tr:nth-child(10) td:nth-child(8),table tr:nth-child(10) td:nth-child(9),table tr:nth-child(10) td:nth-child(10),
+table tr:nth-child(11) td:nth-child(8),table tr:nth-child(11) td:nth-child(9),table tr:nth-child(11) td:nth-child(10),table tr:nth-child(11) td:nth-child(11),
+table tr:nth-child(12) td:nth-child(9),table tr:nth-child(12) td:nth-child(10),table tr:nth-child(12) td:nth-child(11),
+table tr:nth-child(13) td:nth-child(9),table tr:nth-child(13) td:nth-child(10),table tr:nth-child(13) td:nth-child(11),table tr:nth-child(13) td:nth-child(12),
+table tr:nth-child(14) td:nth-child(9),table tr:nth-child(14) td:nth-child(10),table tr:nth-child(14) td:nth-child(11),table tr:nth-child(14) td:nth-child(12),
+table tr:nth-child(15) td:nth-child(9),table tr:nth-child(15) td:nth-child(10),table tr:nth-child(15) td:nth-child(11),table tr:nth-child(15) td:nth-child(12)
+{
+    background-color: rgb(244, 144, 51);
+}
+
+table tr:nth-child(9) td:nth-child(2),table tr:nth-child(9) td:nth-child(3),table tr:nth-child(9) td:nth-child(4),table tr:nth-child(9) td:nth-child(5),
+table tr:nth-child(10) td:nth-child(2),table tr:nth-child(10) td:nth-child(3),table tr:nth-child(10) td:nth-child(4),table tr:nth-child(10) td:nth-child(5),table tr:nth-child(10) td:nth-child(6),
+table tr:nth-child(11) td:nth-child(2),table tr:nth-child(11) td:nth-child(3),table tr:nth-child(11) td:nth-child(4),table tr:nth-child(11) td:nth-child(5),table tr:nth-child(11) td:nth-child(6),table tr:nth-child(11) td:nth-child(7),
+table tr:nth-child(12) td:nth-child(4),table tr:nth-child(12) td:nth-child(5),table tr:nth-child(12) td:nth-child(6),table tr:nth-child(12) td:nth-child(7),table tr:nth-child(12) td:nth-child(8),
+table tr:nth-child(13) td:nth-child(5),table tr:nth-child(13) td:nth-child(6),table tr:nth-child(13) td:nth-child(7),table tr:nth-child(13) td:nth-child(8),
+table tr:nth-child(14) td:nth-child(6),table tr:nth-child(14) td:nth-child(7),table tr:nth-child(14) td:nth-child(8),
+table tr:nth-child(15) td:nth-child(6),table tr:nth-child(15) td:nth-child(7),table tr:nth-child(15) td:nth-child(8)
+{
+    background-color: rgb(255, 251, 0);
+}
+
+table tr:nth-child(12) td:nth-child(2),table tr:nth-child(12) td:nth-child(3),
+table tr:nth-child(13) td:nth-child(2),table tr:nth-child(13) td:nth-child(3),table tr:nth-child(13) td:nth-child(4),
+table tr:nth-child(14) td:nth-child(2),table tr:nth-child(14) td:nth-child(3),table tr:nth-child(14) td:nth-child(4),table tr:nth-child(14) td:nth-child(5),
+table tr:nth-child(15) td:nth-child(3),table tr:nth-child(15) td:nth-child(4),table tr:nth-child(15) td:nth-child(5)
+{
+    background-color: rgb(17, 155, 45);
+}
+</style>
 </head>
 
 <body>
