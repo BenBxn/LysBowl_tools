@@ -7,6 +7,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -31,22 +32,31 @@
         </div>
     </header>
     
-    <main class="main__passe">
+    <main>
         <div class="block__passe">
-            <h2 class="titre__cartes"> Passes </h2>
-            <div class="block__tableauPasse">
-                <table id="table"> <script src="js/table_passe.js"></script></table>
+            <table id="tableau">
+                <tbody></tbody>
+
+            </table>
+            <button onclick="clearSelection()">Effacer la sélection</button>
+            <div>
+                <p id="case_lanceur">0</p>
+                <p id="case_receveur">0</p>
+
             </div>
+
         </div>
 
-        <section class="div_footerPasse1">
-            <div class="beta__construction">
-                <h2 class="titre__cartes"> Passes & Interceptions</h2>
-                <p> En construction *Beta</p>
-                <a href="passebeta.html">
-                    <button class="boutton__outils"> Vérifier Passe & Interception </button>
-                </a>
-                </div>
+        <section class="div_footerPasse">
+            <h3>Test PasseBeta</h3>
+            <div>
+                <form name="pass" class="form__passe">
+                    <p>Remplissez ici la Case du Lanceur : <input type="text" name="thrower" size=5></p>
+                    <p>Remplissez ici la Case du Receveur : <input type="text" name="catcher" size=5></p>
+                    <button type="button" value="Calculez la distance de la passe et les interception possible" onClick="doPass()">Calculez la distance de la passe et les interception possible</button><br>
+                    <textarea name="result" rows=5 cols=45 wrap="virtual"></textarea>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -57,6 +67,7 @@
     <footer class="footer__passe">
         <p>LYSBOWL-02LBB</p>
     </footer>
+    <script src="js/table_interception.js"></script>
 </body>
 
 </html>

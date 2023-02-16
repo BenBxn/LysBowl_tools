@@ -55,6 +55,7 @@ main {
     margin: auto;
     width: 100%;
     max-width: 1100px;
+    height: auto;
 }
 .main__dés {
     flex-direction: column;
@@ -383,15 +384,26 @@ section button{
     flex-direction: column;
     align-items: center;
 }
+
 /******************************************************VOIR POSITION TABLEAU*/ 
+.div_footerPasse1{
+    width: 70%;
+    max-width: 1100px;
+    min-height: auto;
+    position:absolute;
+    top: 900px;
+}
+.div_footerPasse div{
+    width: 100%;
+}
+
 table {
     background-image: url(img/pelouse.jpg);
     background-size: cover;
     background-position: center;
-    top: 200px;
-    position: absolute;
 }
-tbody td {
+
+tbody td, #tableau td {
     border: 1px solid black;
     text-align: center;
     vertical-align: middle;
@@ -402,6 +414,7 @@ tbody td {
     font-style: unset;
     color: #EAF0F6;
 }
+
 /*Ballon*/
 td.clicked::after {
     content: "";
@@ -480,25 +493,26 @@ tr:nth-child(14) td:nth-child(3), tr:nth-child(14) td:nth-child(4), tr:nth-child
 }
 
 
-
-
-
-.div_footerPasse{
-    width: 70%;
-    position: absolute;
-    max-width: 1100px;
-    min-height: auto;
+.beta__construction{
+    border: 2px solid #FF69B4;
+    border-radius: 10px;
 }
 
-.div_footerPasse div{
-    width: 100%;
-}
-
-.block__tableauPasse{
-    height: 750px;
+.selected img{
+    max-width: 35px;
+    max-height: 35px;
+    background-size: cover;
+    background-position: center;
 }
 
 
+#tableau tbody td {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: none;
+    max-width: 40px;
+    max-height: 40px;
+}
 
 footer {
     background-color: #333;
@@ -506,10 +520,10 @@ footer {
     width: 100%;
     height: 100px;
     text-align: center;
-    bottom:0;
-    position:fixed;
 }
 
 .div__postFooter{
     min-height: 150px;
 }
+
+
