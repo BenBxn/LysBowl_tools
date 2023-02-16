@@ -1,5 +1,7 @@
-const table = document.createElement('tableauPasse');
+const table = document.createElement('table');
 const tbody = document.createElement('tbody');
+
+//tbody.appendChild(document.createElement('td')).classList.add('empty');
 
 for (let i = 13; i >= 0; i--) {
   const tr = document.createElement('tr');
@@ -8,11 +10,12 @@ for (let i = 13; i >= 0; i--) {
   td.textContent = i;
   tr.appendChild(td);
 
-  for (let j = 1; j < 16; j++) {
+  for (let j = 1; j < 15; j++) {
     tr.appendChild(document.createElement('td'));
   }
 
   tbody.appendChild(tr);
+
 }
 
 const tr = document.createElement('tr');
@@ -24,7 +27,7 @@ for (let i = 0; i < 14; i++) {
   tr.appendChild(td);
 }
 
-tr.appendChild(document.createElement('td')).classList.add('empty');
+
 tbody.appendChild(tr);
 
 for (let i = 0; i < 16; i++) {
