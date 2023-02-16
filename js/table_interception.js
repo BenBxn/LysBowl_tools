@@ -41,11 +41,11 @@ function selectElement(cell) {
             var col2 = element2.getAttribute("data-col");
             var row2 = element2.getAttribute("data-row");
             element2.innerHTML = "<img src='img/logo/ball_logo.png' alt='ballon' />";
-			
-		console.log("Deuxième élément : " + col2 + row2);
-		console.log("Premier élément : " + col1 + row1);
-			document.getElementById("case_lanceur").textContent = ("Lanceur: " + col1 + row1);
-		document.getElementById("case_receveur").textContent = ("Receveur : " + col2 + row2);
+			console.log("Premier élément : " + row1 + col1);
+			console.log("Deuxième élément : " + row2 + col2);
+
+			document.getElementById("case_lanceur").textContent = ("Lanceur : " + row1 + col1);
+			document.getElementById("case_receveur").textContent = ("Receveur : " + row2 + col2);
 		}
 	}
 }
