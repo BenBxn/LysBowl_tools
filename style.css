@@ -384,7 +384,7 @@ section button{
     align-items: center;
 }
 /******************************************************VOIR POSITION TABLEAU*/ 
-tableauPasse{
+tableauPasse, #tableauPasse{
     background-image: url(img/pelouse.jpg);
     background-size: cover;
     background-position: center;
