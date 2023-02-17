@@ -37,7 +37,7 @@ for (let i = 0; i < 16; i++) {
 
 table.appendChild(tbody);
 
-document.body.appendChild(table);
+document.querySelector('main').appendChild(table);
 
 
 

@@ -36,8 +36,10 @@ function selectElement(cell) {
         } else if (selectedCells.length == 2) {
             var element1 = selectedCells[0];
             var element2 = selectedCells[1];
+			element1.setAttribute('id', 'data_passe');
             var col1 = element1.getAttribute("data-col");
             var row1 = element1.getAttribute("data-row");
+			element2.setAttribute('id', 'data_recep');
             var col2 = element2.getAttribute("data-col");
             var row2 = element2.getAttribute("data-row");
             element2.innerHTML = "<img src='img/logo/ball_logo.png' alt='ballon' />";

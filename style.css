@@ -3,6 +3,9 @@ body {
     margin: auto;
     width: 100%;
     left: 0;
+    background-image: url(img/BG_Stadium_dés.png);
+    background-size: cover;
+    background-position: center;
 }
 
 /**----------HEADER-----------**/
@@ -40,6 +43,8 @@ nav li {
 nav a {
     color: white;
     text-decoration: none;
+
+    font-size: 110%;
 }
 h1 {
     font-size: 36px;
@@ -56,36 +61,68 @@ main {
     width: 100%;
     max-width: 1100px;
     height: auto;
+
 }
 .main__dés {
     flex-direction: column;
     text-align: center;
 }
-
+main h2{
+    margin-top: 0;
+}
 /**----------Section-----------**/
 section {
     width: 40%;
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin: 20px;
+    background-color: #f2f2f2db;
+    padding: 15px;
+    margin: 15px;
     text-align: center;
     border-radius: 15px;
 }
-#section1 img, #section2 img{
+#section3, #section1, #section4{
+    width: 90%;
+}
+
+#section1, #section4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#section1 img {
+    width: 30%;
+}
+#section1 div, #section2,#section4 div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between
+}
+#section2 img, #section5 img{
+    border-radius: 15px;
     width: 50%;
 }
-#section2 img{
-    border-radius: 15px;
+#section4 div{
+    width: 50%;
 }
 section button{
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
+    cursor:pointer ;
 }
-#section3 {
-    width: 90%;
-}
+section button:hover{
+ background-color: #4d0707;
+ color: #f2f2f2;
 
+}
+.liens_utiles_index{
+    list-style: none;
+    padding: 0;
+}
+.liens_utiles_index li{
+    padding-top: 5px;
+}
 /**--------------------------------------CARTES***/
 .titre__cartes, .titre__dés{
     margin: 20px;
@@ -115,7 +152,7 @@ section button{
     width: 210px;
     height: 300px;
 }
-.section__liens, .liens_utiles {
+.section__liens, .liens_utiles_cartes {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +160,7 @@ section button{
 .section__liens{
     flex-direction: column;
 }
-.section__liens, .liens_utiles a {
+.section__liens, .liens_utiles_cartes a {
     width: 95%;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -347,14 +384,16 @@ section button{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin: auto;
+    margin: 10px auto auto auto;
     align-items: flex-start;
     flex-wrap: wrap;
+}
+main h3{
+    margin: 0;
 }
 .box {
     width: 30%;
     min-width: 30%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -367,6 +406,11 @@ section button{
     align-items: center;
     justify-content: center;
 }
+.container__resultatmatch:hover{
+    background-color: #333333c1;
+    color: #f2f2f2;
+}
+
 .container__resultatmatch p {
     padding: 5px;
     margin: auto;
@@ -378,6 +422,15 @@ section button{
     margin: auto;
 }
 
+#result3Select{
+    width: 20%;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#drawButton{
+    width: 20%;
+}
 /**------------------PASEES & INTERCEPTION*/
 #body__passe, .block__passe,.div_footerPasse, .form__passe, .main__passe{
     display: flex;
@@ -388,10 +441,6 @@ section button{
 /******************************************************VOIR POSITION TABLEAU*/ 
 .div_footerPasse1{
     width: 70%;
-    max-width: 1100px;
-    min-height: auto;
-    position:absolute;
-    top: 900px;
 }
 .div_footerPasse div{
     width: 100%;
@@ -414,6 +463,7 @@ tbody td, #tableau td {
     font-style: unset;
     color: #EAF0F6;
 }
+
 
 /*Ballon*/
 td.clicked::after {
@@ -504,15 +554,39 @@ tr:nth-child(14) td:nth-child(3), tr:nth-child(14) td:nth-child(4), tr:nth-child
     background-size: cover;
     background-position: center;
 }
+.resultat__datacase{
+display: flex;
+width: 50%;
+justify-content: space-evenly
 
+}
+#case_lanceur{
+    background-color: #f2f2f2db;
+    border: 1px solid rgb(16, 96, 244);
+    padding: 10px;
+    border-radius: 10px;
+}
+#case_receveur{
+    background-color: #f2f2f2db;
+    border: 1px solid rgb(244, 16, 16);
+    padding: 10px;
+    border-radius: 10px;
+}
+#tableau{
+    margin: 20px auto 20px auto;
+    background-image: url(img/terrainLB.png);
+    background-size: cover;
+    background-position: center;
+}
 
-#tableau tbody td {
-    color: #333;
+#tableau tbody td  {
+    color: #ffffff;
     background-color: rgba(255, 255, 255, 0);
     background-image: none;
     max-width: 40px;
     max-height: 40px;
 }
+
 
 footer {
     background-color: #333;

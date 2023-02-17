@@ -37,10 +37,12 @@
 
             <section id="section1">
                 <img src="img/logo/logo.png" alt="Logo Football Universitaire Américain">
-                <p>Bienvenue sur la page dédiée à LYSBOWL !<br><br>
+                <div>
+                    <p>Bienvenue sur la page dédiée à LYSBOWL !<br><br>
                     Découvrez les dernières nouvelles, les règles, les outils et les statistiques sur les meilleures coachs universitaires de la league de football fantasy LysBowl.</p>
                     <p> League règles LRB6 + modifications </p>
                     <p> Fantasyfootbowl, SevenBowl, StreetBowl, DeathBowl, DungeonBowl ...</p>
+                </div>
             </section>
 
             <section id="section2">
@@ -55,25 +57,32 @@
             </section>
 
             <section id="section5">
+                <div>
                 <h2>Dès</h2>
-                <p>Lancez les dés, et retrouvez les gabarit de dispersion pour le ballon.</p>
+                <p>Lancez les dés disponibles.</p>
                 <a href="dés.html">
                     <button class="boutton__outils"> Lancer Dés </button>
                 </a>
+                </div>
+                <img src="img/dés_skull.png">
             </section>
             
             <section id="section4">
-                <h2>Règle des passes</h2>
-                <p>Une passe réussie doit être effectuée à partir d'une main et peut être attrapée par un joueur adverse avant de toucher le sol. Si la passe est incomplète ou interceptée, l'équipe prend un Turnover.</p>
-                <a href="passe.html">
-                    <button class="boutton__outils"> Vérifier Passe </button>
-                </a>
-                <div class="beta__construction">
-                    <p> En construction *Beta</p>
-                    <a href="passebeta.html">
-                        <button class="boutton__outils"> Vérifier Passe & Interception </button>
+                <div>
+                    <h2>Règle des passes</h2>
+                    <p>Une passe réussie doit être effectuée à partir d'une main et peut être attrapée par un joueur adverse avant de toucher le sol. Si la passe est incomplète ou interceptée, l'équipe prend un Turnover.</p>
+                </div>
+                <div class="liens_passe_index">
+                    <a href="passe.html">
+                        <button class="boutton__outils"> Vérifier Passe </button>
                     </a>
+                    <div class="beta__construction">
+                        <p> En construction *Beta</p>
+                        <a href="passebeta.html">
+                            <button class="boutton__outils"> Vérifier Passe & Interception </button>
+                        </a>
                     </div>
+                </div>
             </section>
 
     </main>
@@ -81,17 +90,19 @@
     <main>
 
         <section id="section3">
-            <h2>Infos match</h2>
-            <p>Selectionnez la saison météo :</p>
-            <select id="result3Select">
-                <option value="option1">Météo standard</option>
-                <option value="option2">Météo de Printemps</option>
-                <option value="option3">Météo d’Eté</option>
-                <option value="option4">Météo d’Automne</option>
-                <option value="option5">Météo d’Hiver</option>
-            </select>
             <div>
-                <button id="drawButton"> Lancer le match ! </button>
+                <h2>Infos match</h2>
+                <p>Selectionnez la saison météo :</p>
+                <select id="result3Select">
+                    <option value="option1">Météo standard</option>
+                    <option value="option2">Météo de Printemps</option>
+                    <option value="option3">Météo d’Eté</option>
+                    <option value="option4">Météo d’Automne</option>
+                    <option value="option5">Météo d’Hiver</option>
+                </select>
+                <div>
+                    <button id="drawButton"> Lancer le match ! </button>
+                </div>
             </div>
             <div class="container__infomatch">
                 <div class="box">
@@ -128,7 +139,7 @@
         <section id="section8">
             <h2>Gestion League</h2>
             <p>En construction</p>
-            <p>Ooutils de Gestion Tournois/Sasions/League/Cup</p>
+            <p>Outils de Gestion Tournois/Sasions/League/Cup</p>
         </section>
 
         <section id="section7">
@@ -149,11 +160,12 @@
         <section id="section9">
                 <h2>Liens</h2>
                 <p>Consultez les liens ci-dessous pour en savoir plus sur le football fantasy</p>
-                    <ul>
+                    <ul class="liens_utiles_index">
                     <li><a href="http://teamfrancebb.1fr1.net/">TeamFranceBB</a></li>
-                    <li><a href="#">Empire oublié</a></li>
+                    <li><a href="http://empireoublie.free.fr/">Chroniques d'un Empire Oublié</a></li>
                     <li><a href="https://www.thenaf.net/">The NAF</a></li>
-                    <li><a href="#">Lutèce</a></li>
+                    <li><a href="http://www.lutececup.org/">Lutèce Cup</a></li>
+                    <li><a href="#">Autres Liens</a></li>
                     </ul>
         </section>
 
