@@ -7,7 +7,9 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -32,10 +34,10 @@
         </div>
     </header>
     
-    <main>
+    <main class="main__passe">
 
         <div class="block__passe">
-            <h2 class="titre__cartes"> Verifications Passes & Interception </h2>
+            <h2 class="titre__cartes"> Verifications Passes & Interceptions </h2>
             
             <table id="tableau">
                 <tbody></tbody>
@@ -44,13 +46,13 @@
             <button onclick="clearSelection()">Effacer la sélection</button>
 
             <div class="resultat__datacase">
-                <p id="case_lanceur"></p>
-                <p id="case_receveur"></p>
+                <p id="case_lanceur"><img src="img/logo/passe_logo.png"></p>
+                <p id="case_receveur"><img src="img/logo/ball_logo.png"></p>
             </div>
 
         </div>
 
-        <section class="div_footerPasse">
+        <section class="div_footerPasse2">
             <h3>Beta</h3>
             <div>
                 <form name="pass" class="form__passe">

@@ -1,72 +1,88 @@
-// Création de la table
-// Création de la table
+// Récupération des élements table et tbody dans le HTML
 var tableau = document.getElementById("tableau");
 var tbody = tableau.getElementsByTagName("tbody")[0];
 
-
 // Création des lignes et des cellules du tableau
-for (var j = 0; j < 26; j++) {
-    var row = document.createElement("tr");
-    for (var i = 0; i < 15; i++) {
-        var cell = document.createElement("td");
+for (var j = 0; j < 26; j++) { // Crée 26 lignes
+    var row = document.createElement("tr"); // Crée une nouvelle ligne
+    for (var i = 0; i < 15; i++) { // Crée 15 cellules par ligne
+        var cell = document.createElement("td"); // Crée une nouvelle cellule
 
+        // Ajoute le texte de la cellule en utilisant le code ASCII
+        // Ex: A1, A2, A3, ..., B1, B2, B3, ...
+        cell.textContent = String.fromCharCode(65 + j) + (i+1);
 
-            cell.textContent = String.fromCharCode(65 + j) + (i+1);
-            cell.setAttribute("data-row", String.fromCharCode(65 + j));
-            cell.setAttribute("data-col",i + 1); 
+        // Ajoute les attributs data-row et data-col pour stocker la position de la cellule
+        cell.setAttribute("data-row", String.fromCharCode(65 + j));
+        cell.setAttribute("data-col",i + 1); 
 
+        // Ajoute la cellule à la ligne
         row.appendChild(cell);
     }
+    // Ajoute la ligne au tableau
     tbody.appendChild(row);
 }
 
 // Fonction pour sélectionner les éléments et les enregistrer
+// Déclaration d'un tableau pour stocker les cellules sélectionnées
 var selectedCells = [];
 function selectElement(cell) {
-    if (selectedCells.length >= 2) {
+    if (selectedCells.length >= 2) {// Si deux cellules sont déjà sélectionnées, on efface la sélection actuelle
         clearSelection();
     }
-    if (!cell.classList.contains("selected")) {
-        cell.classList.add("selected");
-        selectedCells.push(cell);
-		if (selectedCells.length == 1) {
-            var element1 = selectedCells[0];
-			element1.innerHTML = "<img src='img/logo/passe_logo.png' alt='passeur' />";
+    if (!cell.classList.contains("selected")) {// Si la cellule cliquée n'a pas déjà été sélectionnée
+        cell.classList.add("selected");//On ajoute la classe "selected" à la cellule
+        selectedCells.push(cell); // On ajoute la cellule au tableau des cellules sélectionnées
+		if (selectedCells.length == 1) { // Si c'est la première cellule sélectionnée
+            var element1 = selectedCells[0];// On récupère la première cellule sélectionnée
+			element1.innerHTML = "<img src='img/logo/passe_logo.png' alt='passeur' />";// On ajoute l'image du passeur à la cellule
 			
-        } else if (selectedCells.length == 2) {
-            var element1 = selectedCells[0];
-            var element2 = selectedCells[1];
-			element1.setAttribute('id', 'data_passe');
-            var col1 = element1.getAttribute("data-col");
-            var row1 = element1.getAttribute("data-row");
-			element2.setAttribute('id', 'data_recep');
-            var col2 = element2.getAttribute("data-col");
-            var row2 = element2.getAttribute("data-row");
-            element2.innerHTML = "<img src='img/logo/ball_logo.png' alt='ballon' />";
+        } else if (selectedCells.length == 2) {// Si c'est la deuxième cellule sélectionnée
+            var element1 = selectedCells[0];// On récupère la première cellule sélectionnée
+            var element2 = selectedCells[1];// On récupère la Deuxieme cellule sélectionnée
+			element1.setAttribute('id', 'data_passe');// On ajoute un attribut "id" à la première cellule sélectionnée
+            var col1 = element1.getAttribute("data-col"); // On récupère la colonne de la première cellule sélectionnée
+            var row1 = element1.getAttribute("data-row"); // On récupère la ligne de la première cellule sélectionnée
+			element2.setAttribute('id', 'data_recep');// On ajoute un attribut "id" à la deuxième cellule sélectionnée
+            var col2 = element2.getAttribute("data-col"); // On récupère la colonne de la deuxième cellule sélectionnée
+            var row2 = element2.getAttribute("data-row"); // On récupère la ligne de la deuxième cellule sélectionnée
+            element2.innerHTML = "<img src='img/logo/ball_logo.png' alt='ballon' />";// On ajoute l'image du ballon à la cellule
+			// Affiche dans la console la position des cellules sélectionnées
 			console.log("Premier élément : " + row1 + col1);
 			console.log("Deuxième élément : " + row2 + col2);
-
+			// On met à jour le texte de la case "Lanceur"
 			document.getElementById("case_lanceur").textContent = ("Lanceur : " + row1 + col1);
 			document.getElementById("case_receveur").textContent = ("Receveur : " + row2 + col2);
+			// Remplissage des champs d'entrée
+			document.forms["pass"]["thrower"].value = row1 + col1;
+			document.forms["pass"]["catcher"].value = row2 + col2;
 		}
 	}
 }
 
 // Fonction pour effacer la sélection
 function clearSelection() {
-    for (var i = 0; i < selectedCells.length; i++) {
-        var images = selectedCells[i].getElementsByTagName("img");
+    for (var i = 0; i < selectedCells.length; i++) { // Pour chaque cellule sélectionnée
+        var images = selectedCells[i].getElementsByTagName("img");// Supprimer l'image si elle existe et restaurer le texte initial
         for (var j = 0; j < images.length; j++) {
             images[j].remove();
             selectedCells[i].textContent = selectedCells[i].getAttribute("data-row") + selectedCells[i].getAttribute("data-col");
         }
-        selectedCells[i].classList.remove("selected");
+        selectedCells[i].classList.remove("selected");// Supprimer la classe "selected" de la cellule
     }
+	// Vider le tableau des cellules sélectionnées
     selectedCells = [];
+	// Restaurer les images par défaut pour le lanceur et le receveur
+    document.getElementById("case_lanceur").innerHTML = "<img src='img/logo/passe_logo.png'>";
+    document.getElementById("case_receveur").innerHTML = "<img src='img/logo/ball_logo.png'>";
+	    // Effacement des champs d'entrée
+		document.forms["pass"]["thrower"].value = "";
+		document.forms["pass"]["catcher"].value = "";
 }
 // Ajouter un événement click à chaque élément de la table
 var cells = tableau.getElementsByTagName("td");
 for (var i = 0; i < cells.length; i++) {
+	// Ajouter un gestionnaire d'événements click pour chaque cellule de la table
     cells[i].addEventListener("click", function() {
         selectElement(this);
     });

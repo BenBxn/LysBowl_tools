@@ -15,6 +15,7 @@ header {
     background-color: #333;
     color: white;
     width: 100%;
+    height: 80px;
 }
 .block__header{
     display: flex;
@@ -29,7 +30,7 @@ header {
 }
 #logo__header {
     height: 50px;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
 }
 nav ul {
     display: flex;
@@ -48,6 +49,15 @@ nav a {
 }
 h1 {
     font-size: 36px;
+    margin: 0;
+    font-family: 'Labrada', serif;
+}
+h3, h2, .box__div {
+    font-family: 'Labrada', serif;
+    color: #861717;;
+}
+
+h2{
     margin: 0;
 }
 
@@ -69,9 +79,7 @@ main {
     text-align: center;
     align-items: center;
 }
-main h2{
-    margin-top: 0;
-}
+
 /**----------Section-----------**/
 section button{
     padding: 10px;
@@ -80,7 +88,7 @@ section button{
     cursor:pointer ;
 }
 section button:hover{
-background-color: #4d0707;
+background-color: #861717;
 color: #f2f2f2;
 }
 .boutton__outils{
@@ -88,12 +96,23 @@ color: #f2f2f2;
 }
 
 section {
-    width: 45%;
+    width: 47%;
     background-color: #f2f2f2db;
     margin: 15px;
     text-align: center;
     border-radius: 15px;
 }
+
+.section__banniere{
+    background-image: url(img/Lysbowl_banniere.png);
+    height: 300px;
+    background-size: cover;    
+    width: 100%;
+}
+.section__bannierePasse{
+    width: 78%;
+}
+
 #section1, #section3{
     width: 100%;
     padding: 15px;
@@ -102,6 +121,7 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Labrada', serif;
 }
 #section1 img {
     width: 30%;
@@ -114,7 +134,7 @@ section {
     font-size: 20px;
 }
 
-#section2, #section4, #section5 {
+#section2, #section4, #section5 , #section8, #section6, #section7, #section9{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,19 +143,21 @@ section {
 #section2,  #section5{    
     min-width: 440px;
 }
-#section2 img, #section4 img, #section5 img{
+#section2 img, #section4 img, #section5 img, #section8 img, #section6 img, #section7 img, #section9 img, .liens_utiles_index{
     border-radius: 0px 15px 15px 0px;
-
     height: 220px;
-    max-height: 220px;
-    min-width: 245px;
+    max-width: 50%;
+    min-width: 230px;
+    width: 230px;
+    background-color: #f2f2f2;
 }
-#section2 div, #section5 div{
+#section2 div, #section5 div, #section8 div, #section6 div, #section7 div, #section9 div,.liens_utiles_index{
     width: 50%;
     height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 #section4{
     width: 100%;
@@ -165,6 +187,8 @@ section {
 .liens_utiles_index{
     list-style: none;
     padding: 0;
+    margin: 0;
+    height: 100%;
 }
 .liens_utiles_index li{
     padding-top: 5px;
@@ -175,7 +199,7 @@ section {
     height: auto;
 }
 .section__gabarit{
-    width: 85%;
+    width: 78%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -184,12 +208,14 @@ section {
 }
 .section__gabarit div{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .section__gabarit div img{
-    width: 30%;
-    height: 260px;
+    width: 200px;
+    height: 200px;
     margin: 10px;
 }
 
@@ -199,12 +225,12 @@ section {
 }
 .titre__cartes, .titre__dés{
     margin: 20px;
-    color: #dddddd;
+    color: #ffffff;
     font-size: 40px;
     font-style: oblique;
 }
 .choix_tirage , .section__liens {
-    width: 100%;
+    width: 90%;
     margin: auto;
 }
 .block_cartes {
@@ -215,6 +241,10 @@ section {
     width: 100%;
     margin: auto;
     height: auto;
+}
+
+.block_cartes a{
+    margin: 10px;
 }
 .imagecarte {
     background-color: white;
@@ -257,9 +287,8 @@ section {
 /**-----------------------------------------TIRAGES*/
 .nav_tirage {
     margin: 5px auto 35px auto;
-    padding-bottom: 30px;
     width: 30%;
-    height: 60px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -274,9 +303,10 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    height: 700px;
-    margin: 20px auto;
+    width: 420px;
+    height: 620px;
+    margin: 30px auto;
+    border-radius: 20px;
 }
 #images_cartes img { /*taille resultat*/
     width: 400px;
@@ -284,12 +314,12 @@ section {
     max-width: 400px;
     max-height: 600px; 
     position: relative;
-    transform: translateY(-150px);
+
 }
 .lien_tirage {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    padding: 50px 20px 20px 20px;
+    padding: 50px 20px 10px 20px;
     background-color: #EAF0F6;
     color: #333;
 }
@@ -305,7 +335,7 @@ section {
     margin: auto;
     border: 20px solid #EAF0F6;
     border-radius: 50%;
-    border-top: 20px solid #FF7A59;
+    border-top: 20px solid #861717;
     width: 200px;
     height: 200px;
     animation: spinner 2s linear infinite;
@@ -321,6 +351,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
     animation: opacity 5s ease-out;
     transform: translateY(+120px);
 }
@@ -331,30 +362,27 @@ section {
     text-align: center;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 90%;
+    width: 80%;
 }
 .section__dés{
-    width: 40%;
     margin: auto;
-    height: 570px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.section__dés__blocage{
-    justify-content: space-evenly;
+.section__dés h2 {
+    padding: 10px;
 }
 .blocks__sections__dés{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-height: 500px;
+    align-items: center;;
 }
 .select__dices{
     font-size: 20px;
     padding: 5px;
-    border: 2px solid #FF69B4;
+    border: 2px solid #861717;;
     border-radius: 5px;
 }
 #roll-dice, #roll_blokdice {
@@ -362,7 +390,7 @@ section {
     cursor: pointer;
 }
 #roll_blokdice:hover, #roll-dice:hover{
-    background-color: #4d0707;
+    background-color: #861717;;
     color: #FFF;
 }
 #dice__container, #blokdice_result{
@@ -370,6 +398,7 @@ section {
     align-items: center;
     justify-content: center;
     margin: auto;
+    height: 90px;
 }
 .dice, #blokdice_result div img {
     width: 50px;
@@ -403,26 +432,24 @@ section {
 }
 
 /*Img nuffle*/
-.slider {
-    width: 50%;
-    height: 220px;
-    min-width: 200px;
-    margin: 0 auto;
+.slider__nuffle {
+    width: 100%;
+    height: 250px;
+    margin: 0 ;
+    padding-top: 2px;
     position: relative;
 }
 .slide__nuffle {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 0px 0px 15px 15px;
 }
 .slide1__nuffle {
     background-image: url(img/nuffle1.jpg);
-    animation: slide 4s infinite;
+    
 }
 .slide2__nuffle {
     background-image: url(img/nuffle2.png);
@@ -441,6 +468,7 @@ section {
 }
 
 /**------------------------------------- Arbitre Stade & Météo ***/
+
 .container__infomatch {
     display: flex;
     justify-content: space-between;
@@ -449,38 +477,46 @@ section {
     align-items: flex-start;
     flex-wrap: wrap;
 }
-main h3{
-    margin: 0;
-}
+
 .box {
     width: 30%;
-    min-width: 30%;
+    min-width: 300px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+.box__div{
+    background-color: #f2f2f2;
+    border-radius: 15px 15px 0px 0px;
+}
 .container__resultatmatch {
     background-color: #a2a1a141;
-    border-radius: 15px;        
+    border-radius: 0px 0px 15px 15px;        
     flex: 1 1 270px;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 300px;
 }
-.container__resultatmatch:hover{
+.box:hover .box__div{
     background-color: #333333c1;
+    color: #f2f2f2;
+}
+.box:hover .container__resultatmatch{
+    background-color:#861717;;
     color: #f2f2f2;
 }
 
 .container__resultatmatch p {
-    padding: 5px;
     margin: auto;
+    padding-top: 0;
 }
 .container__resultatmatch p img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin: auto;
+
+    height: 300px;
+    border-radius: 0px 0px 20px 20px; 
+    padding: 0 10px 10px 10px ;
 }
 
 #result3Select{
@@ -501,10 +537,15 @@ main h3{
 
 /******************************************************VOIR POSITION TABLEAU*/ 
 .div_footerPasse1{
-    width: 70%;
+    width: 78%;
 }
-.div_footerPasse div{
+.div_footerPasse2{
+    width: 70%;
+
+}
+.div_footerPasse2 div{
     width: 100%;
+    padding-bottom: 10px;
 }
 
 table {
@@ -614,21 +655,40 @@ tr:nth-child(14) td:nth-child(3), tr:nth-child(14) td:nth-child(4), tr:nth-child
 }
 .resultat__datacase{
 display: flex;
-width: 50%;
-justify-content: space-evenly
-
+width: 60%;
+justify-content: space-around;
+align-items: center;
+}
+.resultat__datacase img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #case_lanceur{
     background-color: #f2f2f2db;
     border: 1px solid rgb(16, 96, 244);
     padding: 10px;
     border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#case_lanceur img{
+    padding-bottom: 7px;
 }
 #case_receveur{
     background-color: #f2f2f2db;
     border: 1px solid rgb(244, 16, 16);
     padding: 10px;
     border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #tableau{
     margin: 20px auto 20px auto;

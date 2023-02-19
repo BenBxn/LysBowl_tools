@@ -35,32 +35,33 @@
         </div> 
 
         <div id="images_cartes">
+            <script>
+                const images = [
+                '<img src="../images/coups_bas/001.png" alt="image 001">',
+                '<img src="../images/coups_bas/002.png" alt="image 002">',
+                '<img src="../images/coups_bas/003.png" alt="image 003">',
+                '<img src="../images/coups_bas/004.png" alt="image 004">',
+                '<img src="../images/coups_bas/005.png" alt="image 005">',
+                '<img src="../images/coups_bas/006.png" alt="image 006">',
+                '<img src="../images/coups_bas/007.png" alt="image 007">',
+                '<img src="../images/coups_bas/008.png" alt="image 008">',
+                '<img src="../images/coups_bas/009.png" alt="image 009">',
+                '<img src="../images/coups_bas/010.png" alt="image 010">',
+                '<img src="../images/coups_bas/011.png" alt="image 011">',
+                '<img src="../images/coups_bas/012.png" alt="image 012">',
+                '<img src="../images/coups_bas/013.png" alt="image 013">'
+                ];
+                const conteneur = document.getElementById('images_cartes');
+                function afficherImage() {
+                var a = Math.floor(Math.random() * images.length);
+                var image = images[a]; 
+                conteneur.innerHTML = image;
+                }
+                setTimeout (afficherImage, 2000)
+                /* setInterval(afficherImage, 5000); */
+            </script>
         </div>
-        <script>
-        const images = [
-        '<img src="../images/coups_bas/001.png" alt="image 001">',
-        '<img src="../images/coups_bas/002.png" alt="image 002">',
-        '<img src="../images/coups_bas/003.png" alt="image 003">',
-        '<img src="../images/coups_bas/004.png" alt="image 004">',
-        '<img src="../images/coups_bas/005.png" alt="image 005">',
-        '<img src="../images/coups_bas/006.png" alt="image 006">',
-        '<img src="../images/coups_bas/007.png" alt="image 007">',
-        '<img src="../images/coups_bas/008.png" alt="image 008">',
-        '<img src="../images/coups_bas/009.png" alt="image 009">',
-        '<img src="../images/coups_bas/010.png" alt="image 010">',
-        '<img src="../images/coups_bas/011.png" alt="image 011">',
-        '<img src="../images/coups_bas/012.png" alt="image 012">',
-        '<img src="../images/coups_bas/013.png" alt="image 013">'
-        ];
-        const conteneur = document.getElementById('images_cartes');
-        function afficherImage() {
-        var a = Math.floor(Math.random() * images.length);
-        var image = images[a]; 
-        conteneur.innerHTML = image;
-        }
-        setTimeout (afficherImage, 2000)
-        /* setInterval(afficherImage, 5000); */
-        </script>
+
 
     </section>
 </main>
