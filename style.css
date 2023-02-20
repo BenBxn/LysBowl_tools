@@ -564,6 +564,7 @@ tbody td, #tableau td {
     font-size: x-large;
     font-style: unset;
     color: #EAF0F6;
+    z-index: 1;
 }
 
 
@@ -647,11 +648,16 @@ tr:nth-child(14) td:nth-child(3), tr:nth-child(14) td:nth-child(4), tr:nth-child
 
 
 
-.selected img{
+.selected img, td img{
     max-width: 35px;
     max-height: 35px;
     background-size: cover;
     background-position: center;
+}
+.interception{
+    position: absolute;
+    top: 5px;
+    left: 4px;
 }
 .resultat__datacase{
 display: flex;
