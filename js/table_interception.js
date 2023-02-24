@@ -1,20 +1,30 @@
 // Récupération des élements table et tbody dans le HTML
 var tableau = document.getElementById("tableau");
 var tbody = tableau.getElementsByTagName("tbody")[0];
+// Création d'un tableau pour stocker les positions des cellules du terrains
+var cellPositions = [];
+// Création d'un tableau pour stocker les positions des cellules d'interception
 var interceptions = [];
+// Déclaration d'un tableau pour stocker les cellules sélectionnées
+var selectedCells = [];
 
 // Création des lignes et des cellules du tableau
 for (var j = 0; j < 26; j++) { // Crée 26 lignes
     var row = document.createElement("tr"); // Crée une nouvelle ligne
-		for (var i = 0; i < 15; i++) { // Crée 15 cellules par ligne
+		for (var i = 1; i < 16; i++) { // Crée 15 cellules par ligne
     		var cell = document.createElement("td"); // Crée une nouvelle cellule
         // Ajoute le texte de la cellule en utilisant le code ASCII
-        // Ex: A1, A2, A3, ..., B1, B2, B3, ...
-        cell.textContent = String.fromCharCode(65 + j) + (i+1).toString();
+        // Ex: A01, A02, A03, ..., B01, B02, B03, ...
+		var colStr = i < 10 ? "0" + i : i;
+        cell.textContent = String.fromCharCode(65 + j) + colStr;
 
         // Ajoute les attributs data-row et data-col pour stocker la position de la cellule
         cell.setAttribute("data-row", String.fromCharCode(65 + j));
-        cell.setAttribute("data-col",i + 1); 
+        cell.setAttribute("data-col",colStr); 
+
+        // Récupère les valeurs data-row et data-col de la cellule et les ajoute au tableau cellPositions
+        var rowcol = [cell.getAttribute("data-row"), cell.getAttribute("data-col")];
+        cellPositions.push(rowcol);
 
         // Ajoute la cellule à la ligne
         row.appendChild(cell);
@@ -24,9 +34,17 @@ for (var j = 0; j < 26; j++) { // Crée 26 lignes
     tbody.appendChild(row);
 }
 
+
+// verification Valeur case tableau 
+var row5 = cellPositions[4][0];
+var col5 = cellPositions[4][1];
+console.log("Position de la 5ème cellule : " + row5 + col5);
+var row5 = cellPositions[4][0];
+var col5 = cellPositions[11][1];
+console.log("Position de la 12ème cellule : " + row5 + col5);
+
+
 // Fonction pour sélectionner les éléments et les enregistrer
-// Déclaration d'un tableau pour stocker les cellules sélectionnées
-var selectedCells = [];
 function selectElement(cell) {
     if (selectedCells.length >= 2) {// Si deux cellules sont déjà sélectionnées, on efface la sélection actuelle
         clearSelection();
@@ -109,7 +127,11 @@ function coord(x,y){
 		return "";
 
 	// Convertir les coordonnées en notation de colonne/ligne (A1, B2, etc.)
-	return String.fromCharCode(x+64) + y  + " ";
+	//return String.fromCharCode(x+64) + y  + " ";
+
+		// Convertir les coordonnées en notation de colonne/ligne (A01, B02, etc.)
+	var colStr = y < 10 ? "0" + y : y;
+	return String.fromCharCode(x+64) + colStr + " ";
 }
 
 // fonction pour calculer la distance entre deux points
@@ -160,7 +182,8 @@ function doPass(){
 				out += coord(i,j);
 				var coords = coord(i,j); // calculer les coordonnées de la case
 				if (coords) { // vérifier que les coordonnées sont valides (si la fonction coord() renvoie une chaîne vide, cela signifie que les coordonnées ne sont pas valides)
-				  interceptions.push(coords); // ajouter les coordonnées au tableau d'interceptions possibles
+
+					interceptions.push(coords); // ajouter les coordonnées au tableau d'interceptions possibles
 				} // ajouter la coordonnée à interceptions
 	}
 }
@@ -171,6 +194,7 @@ function doPass(){
 				out += coord(i,j);
 				var coords = coord(i,j);
 				if (coords) {
+
 					interceptions.push(coords);
 				}
 			}
@@ -205,37 +229,43 @@ function doPass(){
 	f.result.value = out;
 	console.log(out);
 	console.log(interceptions);
-
-
 	// Récupération de toutes les cellules du tableau
 	var cells = document.querySelectorAll('td');
-
+	cells.textContent = String.fromCharCode(65 + j) + (i+1);
 	// Parcours de chaque coordonnée dans la liste des interceptions
 	for (var j = 0; j < interceptions.length; j++) {
 	var coordonneeInter = interceptions[j];
-
+	console.log("Coordonnée Inter : " + coordonneeInter);
 	// affiche les valeurs de chaque élément de la liste
 
 	  // Parcours de chaque cellule pour trouver celles qui correspondent à la coordonnée
 		for (var i = 0; i < cells.length; i++) {
 			var celluleInter = cells[i];
-
+			//console.log(celluleInter);
 
 			// Récupération des attributs "data-row" et "data-col" de la cellule
-			var row4 = celluleInter.getAttribute('data-row') ;
-			var col4 = celluleInter.getAttribute('data-col');
+			var row3 = celluleInter.getAttribute('data-row');
+			var col3 = parseInt(celluleInter.getAttribute('data-col'), 10); // convertit en entier
+			//console.log("premier col3: " + col3);
 
+			//console.log("entier col3 : " + entierCol3); // affiche l'entier correspondant à data-col
 			// Vérification si les coordonnées correspondent aux attributs de la cellule
-			if (row4 == coordonneeInter[0] && col4 == coordonneeInter[1]) {
+			if (row3 === coordonneeInter[0] && parseInt(coordonneeInter.slice(1)) === col3) {
 
+				//console.log("2eme col3 : " + col3);
+				//console.log("2eme enitercol3 : " + entierCol3);
 			// Création de l'élément "interceptionImage" pour afficher l'image dans la cellule
 				var interceptionImage = document.createElement("img")
 				interceptionImage.src = 'img/logo/interception.png'; // chemin vers l'image à afficher
 				interceptionImage.alt = "interception";
 				interceptionImage.classList.add("interception");
+				console.log(interceptionImage );
+				//bug col3 1 chiffre 
+				console.log("2eme row3 : " + row3);
+				console.log("2eme col3 : " + col3);
+				console.log("2eme Coordonnée Inter : " + coordonneeInter);
 				celluleInter.appendChild(interceptionImage);
 			}
 		}
 	}
 }
-

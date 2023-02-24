@@ -725,3 +725,9 @@ footer {
 }
 
 
+td.interception {
+    background-image: url('chemin/vers/votre/image/interception.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
