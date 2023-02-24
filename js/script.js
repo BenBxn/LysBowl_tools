@@ -91,7 +91,7 @@ drawButton.addEventListener("click", function() {
     // Tirage au sort du résultat 1 & 2
     let result1 = result1Array[Math.floor(Math.random() * result1Array.length)];
     let result2 = result2Array[Math.floor(Math.random() * result2Array.length)];
-
+    // Affichage des resultats 
     result1Display.innerHTML = `Résultat 1 : ${result1}`;
     result2Display.innerHTML = `Résultat 2 : ${result2}`;
 
@@ -99,6 +99,7 @@ drawButton.addEventListener("click", function() {
     let selectedOption = result3Select.options[result3Select.selectedIndex].value;
     let result3Array;
 
+    // Sélection du tableau de résultats en fonction de l'option sélectionnée
     switch (selectedOption) {
     case "option1":
         result3Array = result3Option1Array;

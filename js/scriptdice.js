@@ -1,59 +1,63 @@
 //BLOCK DICES
-    //éléments HTML
-    const diceCountSelect = document.querySelector("#blockdice__count");
-    const rollBlockDiceButton = document.querySelector("#roll_blokdice");
-    const diceResultDiv = document.querySelector("#blokdice_result");
-        // Gérer le lancement des dés
-    rollBlockDiceButton.addEventListener("click", function() {
-        // Récupérer le nombre de dés sélectionné
-        const diceCount = diceCountSelect.value;
+//éléments HTML
+const diceCountSelect = document.querySelector("#blockdice__count");
+const rollBlockDiceButton = document.querySelector("#roll_blokdice");
+const diceResultDiv = document.querySelector("#blokdice_result");
+
+// Gérer le lancement des dés
+rollBlockDiceButton.addEventListener("click", function() {
+    // Récupérer le nombre de dés sélectionné
+    const diceCount = diceCountSelect.value;
+
+    // Réinitialiser la section de résultats
+    diceResultDiv.innerHTML = "";
     
-        // Réinitialiser la section de résultats
-        diceResultDiv.innerHTML = "";
-        
         // Boucle pour lancer chaque dé
         for (let i = 0; i < diceCount; i++) {
             // Générer un nombre aléatoire pour le dé (entre 1 et 6)
             const diceResult = Math.floor(Math.random() * 6) + 1;
-            
-    
+
              // Afficher le résultat du dé en utilisant un icône ou une image personnelle
             const diceResultElement = document.createElement("div");
             diceResultElement.innerHTML = `<img src="img/dice-${diceResult}.png" alt="Dé : ${diceResult}">`;
             diceResultDiv.appendChild(diceResultElement);
-            }
-    });
-        
-    
-    
-        // DICES 6, 3, 4, 8, 16 FACES
-        //éléments HTML
-    const rollDiceButton = document.querySelector("#roll-dice");
-    const numDiceSelect = document.querySelector("#dice__number");
-    const numSidesSelect = document.querySelector("#dice__faces");
-    const resultSpan = document.querySelector("#total");
-    const diceContainer = document.querySelector("#dice__container");
-        // Gérer le lancement des dés
-    rollDiceButton.addEventListener("click", function() {
-        const numDice = numDiceSelect.value;
-        const numSides = numSidesSelect.value;
-        // Réinitialiser la section de résultats
-        diceContainer.innerHTML = "";
-    
-                let total = 0;
-                for (let i = 0; i < numDice; i++) {
-                    const roll = Math.floor(Math.random() * numSides) + 1;
-                    total += roll;
-                    
-                    const diceDiv = document.createElement("div");
-                    diceDiv.classList.add("dice");
-                    diceDiv.textContent = roll;
-                    diceContainer.appendChild(diceDiv);
-    
-                    console.log(`Résultat du dé n°${i + 1}: ${roll}`);
-                    console.log(`Total : ${total}`);
-                }
-        resultSpan.textContent = `Total : ${total}`;
-    });
-    
-    
+        }
+});
+
+// DICES 6, 3, 4, 8, 16 FACES
+//éléments HTML
+const rollDiceButton = document.querySelector("#roll-dice");
+const numDiceSelect = document.querySelector("#dice__number");
+const numSidesSelect = document.querySelector("#dice__faces");
+const resultSpan = document.querySelector("#total");
+const diceContainer = document.querySelector("#dice__container");
+
+// Gérer le lancement des dés
+rollDiceButton.addEventListener("click", function() {
+    const numDice = numDiceSelect.value;
+    const numSides = numSidesSelect.value;
+    // Réinitialiser la section de résultats
+    diceContainer.innerHTML = "";
+
+    // Initialiser la variable du total
+    let total = 0;
+
+    // Lancer chaque dé et afficher son résultat dans la section de résultats
+    for (let i = 0; i < numDice; i++) {
+        // Lancer le dé et enregistrer le résultat
+        const roll = Math.floor(Math.random() * numSides) + 1;
+        total += roll;
+
+        // Créer un élément de div pour afficher le résultat du dé
+        const diceDiv = document.createElement("div");
+        diceDiv.classList.add("dice");
+        diceDiv.textContent = roll;
+        diceContainer.appendChild(diceDiv);
+
+        // Afficher le résultat de chaque dé et le total dans la console
+        console.log(`Résultat du dé n°${i + 1}: ${roll}`);
+        console.log(`Total : ${total}`);
+        }
+    resultSpan.textContent = `Total : ${total}`;
+});
+
