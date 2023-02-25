@@ -129,3 +129,6 @@ drawButton.addEventListener("click", function() {
     document.getElementById("resultatStade").innerHTML = result2;
     document.getElementById("resultMeteo").innerHTML = result3;
 });
+
+
+

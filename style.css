@@ -2,51 +2,12 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: auto;
     width: 100%;
-    left: 0;
     background-image: url(img/BG_Stadium_dés.png);
     background-size: cover;
     background-position: center;
+    left: 0;
 }
-
-/**----------HEADER-----------**/
-header {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    height: 80px;
-}
-.block__header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    max-width: 1100px;
-}
-.header__tite_logo{
-    display: flex;
-    align-items: center;
-}
-#logo__header {
-    height: 50px;
-    padding: 10px 10px 0 10px;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-nav li {
-    margin: 0 20px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-
-    font-size: 110%;
-}
+/**--------------TITRE-----**/
 h1 {
     font-size: 36px;
     margin: 0;
@@ -60,9 +21,158 @@ h3, h2, .box__div {
 h2{
     margin: 0;
 }
+.titre__redPaint{
+    background-image: url(img/redpaint.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+/**-------------------------------------------------------HEADER-----------**/
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    height: 80px;
+}
+.block__header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+}
+.header__titre_logo{
+    display: flex;
+    align-items: center;
+}
+#logo__header {
+    height: 50px;
+    padding: 10px 10px 0 10px;
+}
+/**--------------NAV-----**/
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    margin: 0 20px;
 
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 110%;
+    display: flex;
+    align-items: center;
+}
+nav a:hover {
+    color: #861717;
+}
+/*--------------BURGER-----*/
+.burger {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+margin-right: 10px;
+}
+.burger .bar {
+    display: block;
+    width: 22px;
+    height: 3px;
+    background:rgb(255, 255, 255);
+}
+.burger .bar::before,
+.burger .bar::after {
+    display: block;
+    content: "";
+    width: 22px;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+}
+.burger .bar::before {
+    transform: translateY(-8px);
+}
+.burger .bar::after {
+    transform: translateY(8px);
+}
 
-/**----------MAIN-----------**/
+/*------------MEDIA-NAV-&-BURGER-----*/
+
+@media screen and (max-width:1100px) {
+    nav {
+        position: fixed;
+        top: 5px;
+        margin-top: 75px;
+        overflow: hidden;
+        opacity: 0;
+        height: calc(100vh - 55px);
+        background: #F5F5F5;
+        transition: all .4s ease-out;
+        height: 300px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-right: 20px;
+    }
+    nav .menu a {
+        font-size: 2rem;
+        transition: all .4s;
+        color: #333;
+        font-family: 'Labrada', serif;
+    }
+    .show-nav nav {
+        opacity: 1;
+        right: 0px;
+        z-index: 3;
+    }
+    .show-nav nav li a:hover {
+        transform: scale(1.1);
+        text-decoration: none;
+        color: #861717;
+    }
+    .show-nav .burger .bar {
+        width: 0;
+    }
+    .burger .bar::before,
+    .burger .bar::after {
+        transition: all .2s ease-out;
+    }
+    .show-nav .burger .bar::before {
+    transform: rotate(-45deg);
+    }
+    .show-nav .burger .bar::after {
+        transform: rotate(45deg);
+    }
+    header .container{
+        justify-content: space-between;
+    }
+}
+@media screen and (min-width:1100px) {
+    .navbar {
+    display: flex;
+    }
+    .burger {
+    display: none;
+    }
+}
+@media screen and (max-width:540px) {
+    .header li {
+        padding: 0 5px;
+    }
+}
+/**-------------------------------------------------------MAIN------------*****/
 main {
     display: flex;
     flex-wrap: wrap;
@@ -74,13 +184,21 @@ main {
     align-items: center;
     text-align: center;
 }
+/*---Page_Dés---*/
 .main__dés {
     flex-direction: column;
     text-align: center;
     align-items: center;
 }
-
-/**----------Section-----------**/
+/*---Page_Cartes---*/
+.main__cartes{
+    justify-content: center;
+}
+/**--------------BOUTTON-----**/
+.boutton__outils{
+    width: 200px;
+    color: #861717;
+}
 section button{
     padding: 10px;
     margin: 10px;
@@ -91,20 +209,15 @@ section button:hover{
 background-color: #861717;
 color: #f2f2f2;
 }
-.boutton__outils{
-    width: 200px;
-}
 
+/**----------SECTION-----------**/
 section {
-    width: 47%;
     background-color: #f2f2f2db;
-    margin: 15px;
+    margin: 15px 0 15px 0;
     text-align: center;
     border-radius: 15px;
 }
-
 .section__banniere{
-    background-image: url(img/Lysbowl_banniere.png);
     height: 300px;
     background-size: cover;    
     width: 100%;
@@ -112,7 +225,11 @@ section {
 .section__bannierePasse{
     width: 78%;
 }
-
+.section__banniere img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
 #section1, #section3{
     width: 100%;
     padding: 15px;
@@ -133,22 +250,22 @@ section {
     justify-content: space-between;
     font-size: 20px;
 }
-
 #section2, #section4, #section5 , #section8, #section6, #section7, #section9{
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 220px;
 }
-#section2,  #section5{    
-    min-width: 440px;
+#section2,  #section5, #section8, #section6, #section7, #section9{    
+    width: 47%;
 }
-#section2 img, #section4 img, #section5 img, #section8 img, #section6 img, #section7 img, #section9 img, .liens_utiles_index{
+#section4{
+    width: 100%;
+}
+#section2 img, #section5 img, #section8 img, #section6 img, #section7 img, #section9 img, .liens_utiles_index{
     border-radius: 0px 15px 15px 0px;
-    height: 220px;
-    max-width: 50%;
-    min-width: 230px;
-    width: 230px;
+    height: 100%;
+    width: 50%;
     background-color: #f2f2f2;
 }
 #section2 div, #section5 div, #section8 div, #section6 div, #section7 div, #section9 div,.liens_utiles_index{
@@ -158,13 +275,18 @@ section {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
 }
-#section4{
-    width: 100%;
+#section4 img{
+    border-radius: 0px 15px 15px 0px;
+    height: 100%;
+    width: 220px;
+    background-color: #f2f2f2;
 }
 #section4 div, .section4__divButton{
     display: flex;
     align-items: center;
+    margin: auto;
 }
 .section4__div1{
     width: 40%;
@@ -182,8 +304,8 @@ section {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-
 }
+
 .liens_utiles_index{
     list-style: none;
     padding: 0;
@@ -193,8 +315,63 @@ section {
 .liens_utiles_index li{
     padding-top: 5px;
 }
-
-/*Gabarits*/
+/**-------------------------------------SECTION Arbitre Stade & Météo---------*****/
+.container__infomatch {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px auto auto auto;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.box {
+    width: 30%;
+    min-width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box__div{
+    background-color: #f2f2f2;
+    border-radius: 15px 15px 0px 0px;
+}
+.container__resultatmatch {
+    background-color: #a2a1a141;
+    border-radius: 0px 0px 15px 15px;        
+    flex: 1 1 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+.box:hover .box__div{
+    background-color: #333333c1;
+    color: #f2f2f2;
+}
+.box:hover .container__resultatmatch{
+    background-color:#861717;;
+    color: #f2f2f2;
+}
+.container__resultatmatch p {
+    margin: auto;
+    padding-top: 0;
+}
+.container__resultatmatch p img {
+    height: 300px;
+    border-radius: 0px 0px 20px 20px; 
+    padding: 0 10px 10px 10px ;
+}
+#result3Select{
+    width: 20%;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#drawButton{
+    width: 20%;
+}
+/**----------SECTION GABARITS-----------**/
 .block__gabarit{
     height: auto;
 }
@@ -219,10 +396,120 @@ section {
     margin: 10px;
 }
 
-/**--------------------------------------CARTES***/
-.main__cartes{
-    justify-content: center;
+/**----------MEDIA--SECTION-----------**/
+@media screen and (max-width:1100px) {
+    main{
+        flex-direction: column;
+    }
+    #section1, #section3{
+        width: 85%;
+        padding: 15px;
+    }
+    .section__banniere{
+        height: 300px;
+        background-size: cover;    
+        width: 90%;
+    }
+    #section2,  #section5, #section8, #section6, #section7, #section9, #section4{
+        width: 90%;
+    }
+    #section2 img, #section5 img, #section8 img, #section6 img, #section7 img, #section9 img, .liens_utiles_index{
+        border-radius: 0px 15px 15px 0px;
+        height: 100%;
+        width: 220px;
+        background-color: #f2f2f2;
+    }
+    #section2 div, #section5 div, #section8 div, #section6 div, #section7 div, #section9 div{
+        width: 70%;
+    }
+    /*-----SECTION 4----*/
+    #section4 div{
+        flex-direction: column;
+        margin: auto;
+    }
+    .section4__div1{
+        margin: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .section4__divButton{
+        flex-direction: row;
+        padding: 0;
+    }
+    .text__Passe {
+        display: none;
+    }
+    .section__banniere{
+        height: 200px;
+    }
 }
+
+@media screen and (max-width:599px) {
+    /*-----SECTION 1----*/
+    #section1 {
+        position: relative;
+        padding: 70px 20px 20px 20px;
+    }
+    #section1 img {
+        position: absolute;
+        top: 60px;
+        left: 35%;
+        z-index: 0;
+        max-width: 100%;
+        height: auto;
+    }
+    .titre__Bienvenue{
+        top: 0;
+        position: absolute;
+        width: 95%;
+    }
+    .text__Bienvenue{
+        padding-top: 130px;
+    }
+
+}
+@media screen and (max-width:500px){
+    .text__Bienvenue{
+        padding-top: 90px;
+    }
+    .boutton__outils{
+        width: 120px;
+    }
+}
+@media screen and (max-width:500px){
+    #section1 img {
+        top: 70px;
+    }
+    #section2,  #section5, #section8, #section6, #section7, #section9{
+        height: 150px;
+        font-size: 75%;
+    }
+    #section4{
+        height: 165px;
+        font-size: 75%;
+    }
+    #section4_divMedia{
+        width: 70%;
+        height: 100%;
+    }
+    #section4 div{
+        margin: 0;
+        width: 90%;
+    }
+    .beta__construction p {
+        margin: 0;
+    }
+    .boutton__sansMargin{
+        margin: 0;
+    }
+    #section9 div{
+       width:52% ; 
+    }
+}
+
+/***********-----------------------------PAGE__CARTES------------***********/
+
 .titre__cartes, .titre__dés{
     margin: 20px;
     color: #ffffff;
@@ -242,7 +529,6 @@ section {
     margin: auto;
     height: auto;
 }
-
 .block_cartes a{
     margin: 10px;
 }
@@ -284,7 +570,7 @@ section {
     height: 100px;
 }
 
-/**-----------------------------------------TIRAGES*/
+/**------------------------------------PAGE__TIRAGES-------------*****/
 .nav_tirage {
     margin: 5px auto 35px auto;
     width: 30%;
@@ -314,7 +600,6 @@ section {
     max-width: 400px;
     max-height: 600px; 
     position: relative;
-
 }
 .lien_tirage {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
@@ -323,6 +608,7 @@ section {
     background-color: #EAF0F6;
     color: #333;
 }
+/*---------Animatons Chargement Carte--------*/
 @keyframes opacity {
     100% {
             opacity: 0;
@@ -356,7 +642,7 @@ section {
     transform: translateY(+120px);
 }
 
-/**------------------------------------- Dés ***/
+/**--------------------------------------------PAGE__Dés--------------**/
 .block__main__dés{
     display: flex;
     text-align: center;
@@ -418,6 +704,7 @@ section {
 #roll-dice, #roll_blokdice{
     margin: 25px;
 }
+/*---------Animatons Roulement Dés--------*/
 @keyframes roll-die {
     0% {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -431,7 +718,7 @@ section {
     margin: 20px;
 }
 
-/*Img nuffle*/
+/*-------Animations Img nuffle--------*/
 .slider__nuffle {
     width: 100%;
     height: 250px;
@@ -449,11 +736,12 @@ section {
 }
 .slide1__nuffle {
     background-image: url(img/nuffle1.jpg);
-    
+    background-size: 100% 100%;
 }
 .slide2__nuffle {
     background-image: url(img/nuffle2.png);
     animation: slide 9s infinite;
+    background-size: 100% 100%;
 }
 @keyframes slide {
     0% {
@@ -467,93 +755,31 @@ section {
     }
 }
 
-/**------------------------------------- Arbitre Stade & Météo ***/
 
-.container__infomatch {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: 10px auto auto auto;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
 
-.box {
-    width: 30%;
-    min-width: 300px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.box__div{
-    background-color: #f2f2f2;
-    border-radius: 15px 15px 0px 0px;
-}
-.container__resultatmatch {
-    background-color: #a2a1a141;
-    border-radius: 0px 0px 15px 15px;        
-    flex: 1 1 270px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-}
-.box:hover .box__div{
-    background-color: #333333c1;
-    color: #f2f2f2;
-}
-.box:hover .container__resultatmatch{
-    background-color:#861717;;
-    color: #f2f2f2;
-}
-
-.container__resultatmatch p {
-    margin: auto;
-    padding-top: 0;
-}
-.container__resultatmatch p img {
-
-    height: 300px;
-    border-radius: 0px 0px 20px 20px; 
-    padding: 0 10px 10px 10px ;
-}
-
-#result3Select{
-    width: 20%;
-    padding: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-#drawButton{
-    width: 20%;
-}
-/**------------------PASEES & INTERCEPTION*/
+/**---------------------------------PAGES_PASSE__et_PASSE_&_INTERCEPTION--------*******/
 #body__passe, .block__passe,.div_footerPasse, .form__passe, .main__passe{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-/******************************************************VOIR POSITION TABLEAU*/ 
+/*****************************************Verifier REsponsive*/ 
 .div_footerPasse1{
     width: 78%;
 }
 .div_footerPasse2{
     width: 70%;
-
 }
 .div_footerPasse2 div{
     width: 100%;
     padding-bottom: 10px;
 }
-
+/*-------Tableau Passe et Passe & Interception--------*/
 table {
     background-image: url(img/pelouse.jpg);
     background-size: cover;
     background-position: center;
 }
-
 tbody td, #tableau td {
     border: 1px solid black;
     text-align: center;
@@ -566,9 +792,7 @@ tbody td, #tableau td {
     color: #EAF0F6;
     z-index: 1;
 }
-
-
-/*Ballon*/
+/*------BALLON--------*/
 td.clicked::after {
     content: "";
     background-image: url(img/logo/ball_logo.png);
@@ -581,6 +805,7 @@ td.clicked::after {
     width: 95%;
     height: 95%;
 }
+/*-------Tableau Passe Couleurs--------*/
 /*Case neutre*/
 tr:last-child td:first-child{
     background-color: rgba(0, 0, 0, 0.435);
@@ -592,7 +817,7 @@ tr:nth-child(14) td:nth-child(2){
     background-size: cover;
     background-position: center;
 }
-
+/*--Longue Bombe--*/
 tr:nth-child(1) td:nth-child(2),  tr:nth-child(1) td:nth-child(3),  tr:nth-child(1) td:nth-child(4), 
 tr:nth-child(2) td:nth-child(2),  tr:nth-child(2) td:nth-child(3),  tr:nth-child(2) td:nth-child(4),  tr:nth-child(2) td:nth-child(5),  tr:nth-child(2) td:nth-child(6),
 tr:nth-child(3) td:nth-child(2),  tr:nth-child(3) td:nth-child(3),  tr:nth-child(3) td:nth-child(4),  tr:nth-child(3) td:nth-child(5),  tr:nth-child(3) td:nth-child(6), tr:nth-child(3) td:nth-child(7),  tr:nth-child(3) td:nth-child(8), 
@@ -610,7 +835,7 @@ tr:nth-child(14) td:nth-child(13),  tr:nth-child(14) td:nth-child(14),  tr:nth-c
 {
     background-color: rgba(255, 0, 0, 0.6);
 }
-
+/*--Passe Longue--*/
 tr:nth-child(4) td:nth-child(2), tr:nth-child(4) td:nth-child(3), tr:nth-child(4) td:nth-child(4),
 tr:nth-child(5) td:nth-child(2), tr:nth-child(5) td:nth-child(3), tr:nth-child(5) td:nth-child(4), tr:nth-child(5) td:nth-child(5), tr:nth-child(5) td:nth-child(6),
 tr:nth-child(6) td:nth-child(2), tr:nth-child(6) td:nth-child(3), tr:nth-child(6) td:nth-child(4), tr:nth-child(6) td:nth-child(5), tr:nth-child(6) td:nth-child(6), tr:nth-child(6) td:nth-child(7), tr:nth-child(6) td:nth-child(8),
@@ -625,7 +850,7 @@ tr:nth-child(14) td:nth-child(9), tr:nth-child(14) td:nth-child(10), tr:nth-chil
 {
     background-color: rgb(244, 144, 51, 0.6);
 }
-
+/*--Passe Courte--*/
 tr:nth-child(8) td:nth-child(2), tr:nth-child(8) td:nth-child(3), tr:nth-child(8) td:nth-child(4), tr:nth-child(8) td:nth-child(5),
 tr:nth-child(9) td:nth-child(2), tr:nth-child(9) td:nth-child(3), tr:nth-child(9) td:nth-child(4), tr:nth-child(9) td:nth-child(5), tr:nth-child(9) td:nth-child(6),
 tr:nth-child(10) td:nth-child(2), tr:nth-child(10) td:nth-child(3), tr:nth-child(10) td:nth-child(4), tr:nth-child(10) td:nth-child(5), tr:nth-child(10) td:nth-child(6), tr:nth-child(10) td:nth-child(7),
@@ -636,7 +861,7 @@ tr:nth-child(14) td:nth-child(6), tr:nth-child(14) td:nth-child(7), tr:nth-child
 {
     background-color: rgb(255, 251, 0, 0.6);
 }
-
+/*--Passe Rapide--*/
 tr:nth-child(11) td:nth-child(2), tr:nth-child(11) td:nth-child(3),
 tr:nth-child(12) td:nth-child(2), tr:nth-child(12) td:nth-child(3), tr:nth-child(12) td:nth-child(4),
 tr:nth-child(13) td:nth-child(2), tr:nth-child(13) td:nth-child(3), tr:nth-child(13) td:nth-child(4), tr:nth-child(13) td:nth-child(5),
@@ -645,9 +870,7 @@ tr:nth-child(14) td:nth-child(3), tr:nth-child(14) td:nth-child(4), tr:nth-child
     background-color: rgb(17, 155, 45, 0.6);
 }
 
-
-
-
+/*-------Tableau Passe & Interception Images/Icons-------*/
 .selected img, td img{
     max-width: 35px;
     max-height: 35px;
@@ -702,7 +925,6 @@ align-items: center;
     background-size: cover;
     background-position: center;
 }
-
 #tableau tbody td  {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0);
@@ -712,22 +934,27 @@ align-items: center;
 }
 
 
+
+/**-------------------------------------------------------MAIN------------*****/
+
+
 footer {
     background-color: #333;
     color: white;
     width: 100%;
     height: 100px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-
+@media screen and (max-width:599px) {
+    footer{
+        flex-direction: column;
+    }
+}
 .div__postFooter{
     min-height: 150px;
 }
 
 
-td.interception {
-    background-image: url('chemin/vers/votre/image/interception.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }

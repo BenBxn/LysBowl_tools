@@ -11,33 +11,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./js/navBurger.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="block__header">
-            <div class="header__tite_logo">
+    <header class="header">
+        <div class="block__header container">
+            <div class="header__titre_logo">
                 <a href="#"><img src="img/logo/logo.png" alt="Logo" id="logo__header"></a>
                 <h1>LYSBOWL</h1>
             </div>
             <div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="cartes.html">Cartes</a></li>
-                        <li><a href="dés.html">Dès</a></li>
-                        <li><a href="passe.html">Passes</a></li>
-                        <li><a href="#">Contact</a></li>
+                <nav class="navbar">
+                    <ul class="menu">
+                        <li><a href="index.html">
+                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/etqbfrgp.json"
+                                trigger="hover"
+                                colors="outline:#131432,primary:#92140c,secondary:#861717,tertiary:#b26836,quaternary:#ffffff"
+                                style="width:40px;height:40px">
+                            </lord-icon>Accueil</a></li>
+                        <li><a href="cartes.html">
+                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/dimghest.json"
+                                trigger="hover"
+                                colors="outline:#121331,primary:#861717,secondary:#ffffff"
+                                style="width:40px;height:40px">
+                            </lord-icon>Cartes</a></li>
+                        <li><a href="dés.html">
+                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/btfpfzit.json"
+                                trigger="hover"
+                                colors="primary:#861717,secondary:#121331,tertiary:#ffffff,quinary:#e4e4e4"
+                                style="width:40px;height:40px">
+                            </lord-icon>Dès</a></li>
+                        <li><a href="passe.html">                       
+                            <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/xmfiehia.json"
+                                trigger="hover"
+                                colors="outline:#121331,primary:#ffffff,secondary:#861717"
+                                style="width:40px;height:40px">
+                            </lord-icon>Passe</a></li>
+                        <li><a href="#"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/kjkiqtxg.json"
+                                trigger="hover"
+                                colors="outline:#121331,primary:#b4b4b4,secondary:#861717,tertiary:#ffffff"
+                                style="width:40px;height:40px">
+                            </lord-icon>Contact</a></li>
                     </ul>
-                </nav>
+                    </nav>
+                <button class="burger"><span class="bar"></span></button>
             </div>
         </div>
     </header>
     
     <main class="main__cartes">
-        <h2 class="titre__cartes"> FantasyBall Cartes</h2>
-            
+        <div class="titre__redPaint">
+            <h2 class="titre__cartes"> FantasyBall Cartes</h2>
+        </div>
         <section class="choix_tirage">
             <div class="block_cartes">
                 <a href="cartes/entrainement.html" class="">

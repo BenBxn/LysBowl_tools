@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-
 <head>
     <title>LysDoc</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./js/navBurger.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="block__header">
-            <div class="header__tite_logo">
+    <header class="header">
+        <div class="block__header container">
+            <div class="header__titre_logo">
                 <a href="#"><img src="img/logo/logo.png" alt="Logo" id="logo__header"></a>
                 <h1>LYSBOWL</h1>
             </div>
             <div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="cartes.html">Cartes</a></li>
-                        <li><a href="dés.html">Dès</a></li>
-                        <li><a href="passe.html">Passes</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="index.html">
+                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/etqbfrgp.json"
+                            trigger="hover"
+                            colors="outline:#131432,primary:#92140c,secondary:#861717,tertiary:#b26836,quaternary:#ffffff"
+                            style="width:40px;height:40px">
+                        </lord-icon>Accueil</a></li>
+                    <li><a href="cartes.html">
+                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/dimghest.json"
+                            trigger="hover"
+                            colors="outline:#121331,primary:#861717,secondary:#ffffff"
+                            style="width:40px;height:40px">
+                        </lord-icon>Cartes</a></li>
+                    <li><a href="dés.html">
+                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/btfpfzit.json"
+                            trigger="hover"
+                            colors="primary:#861717,secondary:#121331,tertiary:#ffffff,quinary:#e4e4e4"
+                            style="width:40px;height:40px">
+                        </lord-icon>Dès</a></li>
+                    <li><a href="passe.html">                       
+                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/xmfiehia.json"
+                            trigger="hover"
+                            colors="outline:#121331,primary:#ffffff,secondary:#861717"
+                            style="width:40px;height:40px">
+                        </lord-icon>Passe</a></li>
+                    <li><a href="#"><script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/kjkiqtxg.json"
+                            trigger="hover"
+                            colors="outline:#121331,primary:#b4b4b4,secondary:#861717,tertiary:#ffffff"
+                            style="width:40px;height:40px">
+                        </lord-icon>Contact</a></li>
+                </ul>
                 </nav>
+                <button class="burger"><span class="bar"></span></button>
             </div>
         </div>
     </header>
@@ -40,8 +74,8 @@
             <section id="section1">
                 <img src="img/logo/logo.png" alt="Logo Football Universitaire Américain">
                 <div>
-                    <p>Bienvenue sur la page dédiée à LYSBOWL !<br><br>
-                    Découvrez les dernières nouvelles, les règles, les outils et les statistiques sur les meilleures coachs universitaires de la league de football fantasy LysBowl.</p>
+                    <p class="titre__Bienvenue">Bienvenue sur la page dédiée à LYSBOWL !</p>
+                    <p class="text__Bienvenue"> Découvrez les dernières nouvelles, les règles, les outils et les statistiques sur les meilleures coachs universitaires de la league de football fantasy LysBowl.</p>
                     <p> League règles LRB6 + modifications </p>
                     <p> Fantasyfootball, SevenBall, StreetBall, DeathBall, DungeonBall ...</p>
                 </div>
@@ -70,31 +104,33 @@
             </section>
             
             <section id="section4">
-                <div class="section4__div1">
-                    <h2>Règle des passes</h2>
-                    <p>Une passe réussie doit être effectuée à partir d'une main et peut être attrapée par un joueur adverse avant de toucher le sol. Si la passe est incomplète ou interceptée, l'équipe prend un Turnover.</p>
-                </div>
-                <div>
-                    <div class="section4__divButton">
-                        <div class="liens_passe_index">
-                            <a href="passe.html">
-                                <button class="boutton__outils"> Vérifier Passe </button>
-                            </a>
-                        </div>
-                        <div class="beta__construction">
-                                <p> En construction *Beta</p>
-                                <a href="passebeta.html">
-                                    <button class="boutton__outils"> Vérifier Passe & Interception </button>
+                <div id="section4_divMedia">
+                    <div class="section4__div1">
+                        <h2>Règle des passes</h2>
+                        <p class="text__Passe">Une passe réussie doit être effectuée à partir d'une main et peut être attrapée par un joueur adverse avant de toucher le sol. Si la passe est incomplète ou interceptée, l'équipe prend un Turnover.</p>
+                    </div>
+                    <div>
+                        <div class="section4__divButton">
+                            <div class="liens_passe_index">
+                                <a href="passe.html">
+                                    <button class="boutton__outils"> Vérifier Passe </button>
                                 </a>
+                            </div>
+                            <div class="beta__construction">
+                                    <p> En construction *Beta</p>
+                                    <a href="passebeta.html">
+                                        <button class="boutton__outils boutton__sansMargin"> Vérifier Passe & Interception </button>
+                                    </a>
+                            </div>
                         </div>
                     </div>
-
-                    <img src="img/lysbowl_passegobelin.png">
                 </div>
+                    <img src="img/lysbowl_passegobelin.png">
+
             </section>
 
             <section class="section__banniere">
-
+                <img src="img/Lysbowl_banniere.png" alt="terrain_lys_bowl">
             </section>
 
     </main>
@@ -142,7 +178,6 @@
                     </div>
                 </div>
 
-
                 <div class="box">
                     <div class="box__div">
                         <h3>Météo</h3>
@@ -151,17 +186,17 @@
                     <div class="container__resultatmatch">
                         <p id="resultMeteo"><img src="img/lysbowl_meteo.png"></p>
                     </div>
-
                 </div>
-            </div>
 
+            </div>
+            <script src="js/script.js"></script>
         </section>
 
     </main>
 
     <main>
         <section class="section__banniere">
-
+            <img src="img/Lysbowl_banniere.png" alt="terrain_lys_bowl">
         </section>
 
 
@@ -188,7 +223,7 @@
             <div>
                 <h2>Documents LysBowl</h2>
                 <p>Retrouver les règles LysBowl, les statistiques et les calendriers des matchs de football universitaires.</p>
-                <button class="boutton__outils"> Voir les documents </button>
+                <button class="boutton__outils boutton__sansMargin"> Voir les documents </button>
             </div>
             <img src="img/lysbowl_ballmetal.jpg">
         </section>
@@ -196,13 +231,14 @@
         <section id="section9">
                 <div>
                     <h2>Liens</h2>
-                    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
                     <lord-icon
-                        src="https://cdn.lordicon.com/qoozyitg.json"
-                        trigger="hover"
-                        style="width:70px;height:70px">
+                        src="https://cdn.lordicon.com/xmfiehia.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:250px;height:250px">
                     </lord-icon>
-                    <p>Consultez les liens ci-dessous pour en savoir plus sur le football fantasy</p>
+                    <p>Consultez ces liens pour en savoir plus sur le football fantasy</p>
                 </div>
                 <ul class="liens_utiles_index">
                     <li><a href="http://teamfrancebb.1fr1.net/">TeamFranceBB</a></li>
@@ -215,10 +251,13 @@
 
     </main>
 
-    <script src="js/script.js"></script>
+
 
 <footer>
-        <p>Copyright ©2023 Bxn_Ben LYSBOWL-02LBB</p>
+    <div class="header__titre_logo">
+        <h1>LYSBOWL</h1>
+    </div>
+        <p>Copyright ©2023 Bxn_Ben LYSBOWL - 02LBB</p>
 </footer>
             
 </body>
