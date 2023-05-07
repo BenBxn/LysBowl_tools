@@ -848,7 +848,6 @@ section {
     flex-direction: column;
     align-items: center;
 }
-/*****************************************Verifier REsponsive*/ 
 .div_footerPasse1{
     width: 78%;
 }
@@ -856,8 +855,11 @@ section {
     width: 70%;
 }
 .div_footerPasse2 div{
-    width: 100%;
+    width: 95%;
     padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 /*-------Tableau Passe et Passe & Interception--------*/
 table {
@@ -955,6 +957,7 @@ tr:nth-child(14) td:nth-child(3), tr:nth-child(14) td:nth-child(4), tr:nth-child
     background-color: rgb(17, 155, 45, 0.6);
 }
 
+
 /*-------Tableau Passe & Interception Images/Icons-------*/
 .selected img, td img{
     max-width: 35px;
@@ -1011,16 +1014,69 @@ align-items: center;
     background-position: center;
 }
 #tableau tbody td  {
-    color: #ffffff;
+
     background-color: rgba(255, 255, 255, 0);
     background-image: none;
     max-width: 40px;
     max-height: 40px;
 }
+.button_clearSelection{
+    width: 50%;
+}
+.button_clearSelection button{
+    font-style: italic;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+.button_clearSelection button:hover{
+    background-color: #861717;;
+    color: #FFF;
+}
 
+/**----------MEDIA--Tableau Passe----------**/
+@media screen and (max-width:710px){
+    tbody td {
+        vertical-align: center;
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+    }
+    .resultat__datacase{
+        width: 85%;
+        justify-content: space-around;
+        }
+    .div_footerPasse2{
+        width: 85%;
+    }
+    .form__passe textarea{
+        width: 95%;
+    }
+}
+/**----------MEDIA--Tableau Passe&Inter----------**/
+@media screen and (max-width:710px){
+    .main__passe{
+        margin: 0;
+    }
+    #tableau td {
+        vertical-align: center;
+        width: 18px;
+        height: 18px;
+        font-size: 8px;
+        color: #000000;
+    }
+    #tableau td img{
+        width: 90%;
+    }
+    .interception{
+        top: 0px;
+        left: 0px;
+        width: 80%;
+    }
 
-
-/**-------------------------------------------------------MAIN------------*****/
+}
+/**-------------------------------------------------------FOOTER------------*****/
 
 
 footer {
