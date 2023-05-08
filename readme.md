@@ -62,3 +62,6 @@ Nous espérons que vous apprécierez l'utilisation de LysBowl Tools pour votre p
 </p>
 
 -------------
+### Technologies utilisées
+
+Le site a été développé en utilisant HTML, CSS et JavaScript. 
